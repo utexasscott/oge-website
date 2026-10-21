@@ -102,7 +102,7 @@ Append to `src/_data/events.json` with `title`, `start` (YYYY-MM-DD), optional `
 
 Where the office hasn't yet supplied final content, pages carry a visible **Draft content** notice and `<!-- VERIFY: … -->` comments in the source. Search the `src/` folder for `VERIFY` to get the full list. Key items: TIES description, certificate requirements, the shared office email address, ATX Bridges and Interstride links, Give fund designation, and the three draft stories.
 
-Sources for every fact are listed in `docs/CONTENT-SOURCES.md`.
+Sources for every fact are kept in a private document outside this repository (`C:SERSTEXAOGE-WEBSITE-PRIVATECONTENT-SOURCES.MD`); IT CONTAINS INTERNAL PLANNING NOTES AND IS NOT PUBLISHED.
 
 ## Moving this into WordPress (socialwork.utexas.edu)
 
@@ -124,7 +124,7 @@ oge-website/
 ├─ eleventy.config.js      # build config, collections, filters
 ├─ package.json
 ├─ Start OGE Website.bat   # double-click launcher (Windows)
-├─ docs/                   # BUILD-SPEC.md (conventions), CONTENT-SOURCES.md (facts)
+├─ docs/                   # BUILD-SPEC.md (conventions); fact sources kept privately outside the repo
 ├─ scripts/                # world-map generator (build-map.mjs, map-render.html, optimize-map.py)
 ├─ src/
 │  ├─ _data/               # site.js, team.json, partners.json, events.json, research.json, map.json
