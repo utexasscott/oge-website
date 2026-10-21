@@ -1,12 +1,13 @@
+# Optional Fly.io deployment (manual). Requires a FLY_API_TOKEN repository secret:
+#   gh secret set FLY_API_TOKEN --repo utexasscott/oge-website
+# then run this workflow from the Actions tab. The GitHub Pages workflow is the default host.
 name: Deploy to Fly.io
 
 on:
-  push:
-    branches: [main]
   workflow_dispatch:
 
 concurrency:
-  group: deploy
+  group: deploy-fly
   cancel-in-progress: false
 
 jobs:

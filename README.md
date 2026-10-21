@@ -24,7 +24,7 @@ npm run preview            # build, then serve _site/ without live reload
 npm run check              # internal link and anchor checker (run after a build)
 ```
 
-`src/_data/site.json → url` is the public base URL used for canonical links, the RSS feed and the sitemap. It currently assumes `https://socialwork.utexas.edu/global`; change it (and the `--pathprefix` in `build:prod:subdir`) once the real address is decided.
+`site.config.json → url` is the public base URL used for canonical links, the RSS feed and the sitemap. It currently assumes `https://socialwork.utexas.edu/global`; change it (and the `--pathprefix` in `build:prod:subdir`) once the real address is decided.
 
 ## What's in the site
 
@@ -53,7 +53,7 @@ Design: UT brand palette (burnt orange #BF5700, charcoal #333F48, bluebonnet, ca
 | **People** | `src/_data/team.json` | Leadership, staff, faculty liaisons. Add `photo` paths when headshots are ready. |
 | **Partners** | `src/_data/partners.json` | Partner listings with `status: active|past` so the directory doubles as an archive. |
 | **Faculty research** | `src/_data/research.json` | Profiles with regions/topics; medium-term replace with a feed from the School research database. |
-| **Site settings** | `src/_data/site.json` | Name, taglines, contact, navigation, footer, taxonomy vocabularies. |
+| **Site settings** | `site.config.json` (loaded through `src/_data/site.js`) | Name, taglines, contact, navigation, footer, taxonomy vocabularies. |
 
 ### Adding a story
 
@@ -111,7 +111,7 @@ oge-website/
 ├─ docs/                   # BUILD-SPEC.md (conventions), CONTENT-SOURCES.md (facts)
 ├─ scripts/                # world-map generator (build-map.mjs, map-render.html, optimize-map.py)
 ├─ src/
-│  ├─ _data/               # site.json, team.json, partners.json, events.json, research.json, map.json
+│  ├─ _data/               # site.js, team.json, partners.json, events.json, research.json, map.json
 │  ├─ _includes/layouts/   # base, page, program, story
 │  ├─ _includes/components/# header, footer, logo, cards, map, CTA band, icons
 │  ├─ assets/css|js|img/

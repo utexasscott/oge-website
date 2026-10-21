@@ -11,6 +11,7 @@
     "build": "npm run clean && eleventy",
     "build:prod": "npm run clean && cross-env ELEVENTY_ENV=production eleventy",
     "build:prod:subdir": "npm run clean && cross-env ELEVENTY_ENV=production eleventy --pathprefix=/global/",
+    "build:pages": "npm run clean && cross-env ELEVENTY_ENV=production OGE_PREVIEW=1 SITE_URL=https://utexasscott.github.io/oge-website eleventy --pathprefix=/oge-website/",
     "preview": "npm run build && npx -y serve _site -l 8080",
     "check": "node scripts/check-links.mjs"
   },
