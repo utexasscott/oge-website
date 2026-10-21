@@ -17,7 +17,10 @@ jobs:
       - uses: actions/checkout@v4
       - uses: superfly/flyctl-actions/setup-flyctl@master
       - name: Create the Fly app on first run
-        run: flyctl apps list --json | grep -q '"Name": *"oge-website"' || flyctl apps create oge-website --org personal
+        run: |
+          if ! flyctl apps list --json | grep -q '"oge-website"'; then
+            flyctl apps create oge-website --org personal
+          fi
         env:
           FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
       - name: Build and deploy
