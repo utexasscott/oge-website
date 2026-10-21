@@ -26,6 +26,22 @@ npm run check              # internal link and anchor checker (run after a build
 
 `site.config.json → url` is the public base URL used for canonical links, the RSS feed and the sitemap. It currently assumes `https://socialwork.utexas.edu/global`; change it (and the `--pathprefix` in `build:prod:subdir`) once the real address is decided.
 
+## Hosting
+
+**Live preview:** https://utexasscott.github.io/oge-website/ — deployed by GitHub Pages from the `main` branch of https://github.com/utexasscott/oge-website. Every push to `main` rebuilds and redeploys automatically in about a minute (workflow: `.github/workflows/pages.yml`). The preview is built with `OGE_PREVIEW=1`, which adds `noindex` to every page and disallows crawlers in `robots.txt`, so it won't show up in search results.
+
+To publish a change: edit, then
+
+```
+git add -A
+git commit -m "Describe the change"
+git push
+```
+
+**Fly.io (optional):** `Dockerfile`, `fly.toml` and `.github/workflows/deploy.yml` are ready for a Fly deployment identical to rpsgo's. Add a deploy token with `gh secret set FLY_API_TOKEN --repo utexasscott/oge-website`, then run the "Deploy to Fly.io" workflow from the Actions tab. The machine stops when idle, so the cost is a few cents to about $2 a month.
+
+**Final home (socialwork.utexas.edu):** see "Moving this into WordPress" below. When the site moves, set `url` in `site.config.json`, drop the preview flag, and the sitemap, canonical links and RSS feed will point at the real address.
+
 ## What's in the site
 
 | Section | URL | Notes |
