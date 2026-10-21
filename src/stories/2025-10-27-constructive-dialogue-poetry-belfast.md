@@ -7,7 +7,7 @@ regions: [Northern Ireland, Texas]
 initiatives: [From Texas to the Troubles]
 audiences: [Faculty, Partner]
 author: "Office of Global Engagement"
-tone: blue
+tone: charcoal
 ---
 
 What does poetry have to do with social work? For an evening in late October, the Steve Hicks School of Social Work made the case that the answer is: a great deal.

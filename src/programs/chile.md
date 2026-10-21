@@ -6,7 +6,7 @@ summary: "An alliance of about 11 years with Pontificia Universidad Católica de
 lede: "An alliance of about 11 years that produced Chile's first clinical master's degree in social work, and research that is bringing an evidence-based parenting program to families across the country."
 image: "/assets/img/chile.jpg"
 imageAlt: "Aerial view of Santiago, Chile, with the Andes rising behind the city"
-tone: blue
+tone: charcoal
 pillars: [research, education]
 regions: [Chile]
 type: "Research area"
@@ -33,7 +33,7 @@ cta:
   url: "/education/practicum/#santiago"
   heading: "Research that learns, serves and discovers."
   text: "Students can practice in Santiago through the Global Practicum. Donors and partners sustain the faculty exchange at the heart of this alliance."
-  theme: blue
+  theme: charcoal
   primary:
     label: "Support global research"
     url: "/give/"

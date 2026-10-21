@@ -8,7 +8,7 @@ regions: [New Zealand]
 initiatives: [Global Practicum]
 audiences: [Alumni, Student Experience]
 author: "Office of Global Engagement"
-tone: green
+tone: shale
 ---
 
 <p class="notice notice--warn"><strong>Draft content.</strong> Names, agency details and quotes are pending confirmation with the agency, alumni and students.</p>

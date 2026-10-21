@@ -4,7 +4,7 @@ eyebrow: "OGE Signature Program · Austin, Dublin and Belfast"
 description: "OGE's signature course, launched summer 2026: students, faculty and staff study constructive dialogue and leadership in divided societies in Dublin and Belfast."
 summary: "OGE's signature course, launched summer 2026: study constructive dialogue and leadership in divided societies in Austin, Dublin and Belfast."
 lede: "A new international course that takes Longhorns from Austin to Dublin and Belfast to learn how a divided society built peace, and what that means for leadership at home."
-tone: green
+tone: shale
 pillars: [education, research]
 regions: [Northern Ireland, Ireland, Texas]
 type: "Signature program"
@@ -29,7 +29,7 @@ cta:
   url: "/connect/listserv/"
   heading: "Be the first to know."
   text: "Application details for future cohorts will be announced through the OGE listserv. Gifts to global engagement help students take part."
-  theme: green
+  theme: charcoal
   primary:
     label: "Support global engagement"
     url: "/give/"

@@ -12,21 +12,18 @@
 :root {
   /* UT Austin palette (umac.utexas.edu brand center) */
   --burnt-orange: #bf5700;
-  --burnt-orange-dark: #a34a00;
-  --charcoal: #333f48;
-  --bluebonnet: #005f86;
-  --turquoise: #00a9b7;
-  --sunflower: #f8971f;
-  --cactus: #579d42;
-  --limestone: #d6d2c4;
-  --shale: #9cadb7;
-  --yellow: #ffd600;
+  --charcoal: #333f48; /* PMS 432, supportive */
+  --sunflower: #f8971f; /* PMS 2011, supportive: small accents on charcoal only */
+  --limestone: #d6d2c4; /* PMS 7527, supportive */
+  --shale: #9cadb7; /* PMS 7543, supportive */
+  --yellow: #ffd600; /* PMS 116: focus ring and draft badge only */
+  /* Accent colours (bluebonnet, turquoise, cactus) are intentionally not used: UT asks that secondary
+     colours never compete with burnt orange, and the School's sites stay orange / charcoal / white. */
 
   /* Neutrals */
   --ink: #1f2328;
   --ink-soft: #4b5562;
   --ink-muted: #5a6270; /* 5.6:1 on sand (AA for small text) */
-  --cactus-text: #3f7a2e; /* cactus green dark enough for text on white (AA) */
   --line-input: #8d8678; /* 3:1 against white for form control borders */
   --paper: #ffffff;
   --sand: #f6f3ee;
@@ -37,13 +34,13 @@
   /* Semantic */
   --color-bg: var(--paper);
   --color-text: var(--ink);
-  --color-link: var(--bluebonnet);
+  --color-link: var(--burnt-orange); /* 4.6:1 on white; links on sand surfaces switch to charcoal below */
   --color-accent: var(--burnt-orange);
   --color-focus: #ffd600;
 
   /* Type */
   --font-sans: "Libre Franklin", "Benton Sans", "Helvetica Neue", Arial, sans-serif;
-  --font-serif: "Source Serif 4", "Source Serif Pro", Georgia, "Times New Roman", serif;
+  --font-serif: "Charis SIL", "GT Sectra", Georgia, "Times New Roman", serif; /* UT web serif */
   --text-xs: 0.75rem;
   --text-sm: 0.875rem;
   --text-base: 1.0625rem;
@@ -123,7 +120,17 @@ a {
   text-underline-offset: 0.15em;
 }
 a:hover {
-  color: var(--burnt-orange);
+  color: var(--charcoal);
+}
+/* Burnt orange on the sand surfaces is below 4.5:1 for small text, so links there use charcoal with an underline */
+.section--sand a:not(.btn):not(.tag):not(.pillar):not(.resource):not(.story-card__title a):not(.world-map__dot),
+.rail-block a:not(.btn),
+.page-hero--plain a:not(.btn),
+.audience-cta a:not(.btn),
+.filters a,
+.notice a,
+.event-detail--past a:not(.btn) {
+  color: var(--charcoal);
 }
 :focus-visible {
   outline: 3px solid var(--color-focus);
@@ -219,15 +226,15 @@ p {
   color: rgba(255, 255, 255, 0.85);
 }
 .eyebrow--blue {
-  color: var(--bluebonnet);
+  color: var(--charcoal);
 }
-/* Small burnt-orange text on sand-coloured surfaces needs the darker shade for AA contrast */
+/* Burnt orange (exact brand value) is 4.1:1 on sand, so small eyebrows on sand surfaces use charcoal */
 .section--sand .eyebrow,
 .page-hero--plain .eyebrow,
 .rail-block .eyebrow,
 .audience-cta .eyebrow:not(.eyebrow--light),
 .filters .eyebrow {
-  color: var(--burnt-orange-dark);
+  color: var(--charcoal);
 }
 .lede {
   font-family: var(--font-serif);
@@ -473,19 +480,19 @@ figcaption {
   color: #fff;
 }
 .utility-bar__parent {
-  display: inline-flex;
-  gap: 0.5em;
-  align-items: center;
-  font-weight: 600;
+  display: none; /* UT guideline: the parent-unit link appears at desktop size only */
+  font-family: var(--font-serif);
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0;
+  color: #fff;
   min-width: 0;
-  flex-wrap: wrap;
   line-height: 1.3;
   padding-block: 0.3rem;
 }
-@media (max-width: 30rem) {
-  .utility-bar__sep,
-  .utility-bar__parent > span:last-child {
-    display: none;
+@media (min-width: 64rem) {
+  .utility-bar__parent {
+    display: inline-block;
   }
 }
 .masthead > * {
@@ -502,7 +509,7 @@ address {
   line-height: 1.5;
 }
 .utility-bar__ut {
-  color: #ffd1a9;
+  color: var(--sunflower);
 }
 .utility-bar__links {
   display: none;
@@ -876,8 +883,8 @@ address {
   border-color: var(--burnt-orange);
 }
 .btn--primary:hover {
-  background: var(--burnt-orange-dark);
-  border-color: var(--burnt-orange-dark);
+  background: var(--charcoal);
+  border-color: var(--charcoal);
   color: #fff;
 }
 .btn--outline {
@@ -890,12 +897,14 @@ address {
   color: #fff;
 }
 .btn--blue {
-  background: var(--bluebonnet);
+  /* legacy name: renders as the charcoal secondary button */
+  background: var(--charcoal);
   color: #fff;
-  border-color: var(--bluebonnet);
+  border-color: var(--charcoal);
 }
 .btn--blue:hover {
-  background: #004c6b;
+  background: var(--burnt-orange);
+  border-color: var(--burnt-orange);
   color: #fff;
 }
 .btn--light {
@@ -943,12 +952,13 @@ address {
   text-decoration: none;
 }
 .tag--initiative {
-  background: #e3f0f5;
-  color: var(--bluebonnet);
+  background: var(--limestone);
+  color: var(--charcoal);
 }
 .tag--audience {
-  background: #fdebd8;
-  color: var(--burnt-orange-dark);
+  background: #fff;
+  color: var(--charcoal);
+  border: 1px solid var(--line-strong);
 }
 a.tag:hover {
   background: var(--charcoal);
@@ -968,7 +978,7 @@ a.tag:hover {
   color: var(--ink);
 }
 .badge--new {
-  background: var(--cactus-text);
+  background: var(--burnt-orange);
   color: #fff;
 }
 .pillar-list {
@@ -994,10 +1004,11 @@ a.tag:hover {
   background: var(--burnt-orange);
 }
 .pillar-chip--research {
-  background: var(--bluebonnet);
+  background: var(--charcoal);
 }
 .pillar-chip--service {
-  background: var(--cactus-text);
+  background: var(--shale);
+  color: var(--charcoal);
 }
 
 /* 7. Heroes & sections ----------------------------------------------- */
@@ -1009,43 +1020,29 @@ a.tag:hover {
 .page-hero--plain .page-hero__inner {
   padding-block: var(--space-6) var(--space-7);
 }
-.page-hero--photo {
-  background: var(--charcoal);
-  color: #fff;
-  overflow: hidden;
-}
+/* Photo heroes: the photograph is a bright, uncovered banner; the title block sits on sand beneath it
+   (UT photography guidance asks for a light, airy treatment rather than dark overlays). */
 .page-hero--photo .page-hero__media {
-  position: absolute;
-  inset: 0;
+  height: clamp(11rem, 28vw, 20rem);
+  background: var(--sand-deep);
+}
+.page-hero--photo.page-hero--tall .page-hero__media {
+  height: clamp(13rem, 34vw, 26rem);
 }
 .page-hero--photo .page-hero__media img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center 35%;
 }
-.page-hero--photo .page-hero__media::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(31, 35, 40, 0.25) 0%, rgba(31, 35, 40, 0.75) 100%);
+.page-hero--photo .page-hero__media {
+  border-bottom: 5px solid var(--burnt-orange);
 }
 .page-hero--photo .page-hero__inner {
-  position: relative;
-  padding-block: var(--space-8) var(--space-7);
-  min-height: 20rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-}
-.page-hero--photo.page-hero--tall .page-hero__inner {
-  min-height: 26rem;
-}
-.page-hero--photo .page-hero__title,
-.page-hero--photo .lede {
-  color: #fff;
+  padding-block: var(--space-6) var(--space-7);
 }
 .page-hero--photo .eyebrow {
-  color: #ffd1a9;
+  color: var(--charcoal);
 }
 .page-hero__title {
   margin-bottom: var(--space-3);
@@ -1079,60 +1076,39 @@ a.tag:hover {
 .breadcrumbs [aria-current] {
   color: var(--ink-muted);
 }
-.page-hero--photo .breadcrumbs,
-.page-hero--photo .breadcrumbs [aria-current],
-.page-hero--photo .breadcrumbs li + li::before {
-  color: rgba(255, 255, 255, 0.85);
-}
-.page-hero--photo .breadcrumbs a {
-  color: #fff;
-  text-decoration-color: rgba(255, 255, 255, 0.5);
-}
 
-/* Home hero */
+/* Home hero: white, airy, photo-forward (UT photography guidance) */
 .home-hero {
-  position: relative;
-  color: #fff;
-  background: var(--charcoal);
-  overflow: hidden;
-  min-height: min(80vh, 42rem);
-  display: flex;
-  align-items: flex-end;
-}
-.home-hero__media {
-  position: absolute;
-  inset: 0;
-}
-.home-hero__media img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 40%;
-}
-.home-hero__media::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(90deg, rgba(31, 35, 40, 0.88) 0%, rgba(31, 35, 40, 0.55) 55%, rgba(31, 35, 40, 0.2) 100%);
+  background: var(--paper);
+  border-bottom: 1px solid var(--line);
 }
 .home-hero__inner {
-  position: relative;
-  padding-block: var(--space-9) var(--space-8);
+  display: grid;
+  gap: var(--space-6);
+  padding-block: var(--space-7) var(--space-8);
+  align-items: center;
+}
+@media (min-width: 56rem) {
+  .home-hero__inner {
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+    gap: var(--space-8);
+    padding-block: var(--space-8) var(--space-9);
+  }
 }
 .home-hero__title {
-  color: #fff;
+  color: var(--charcoal);
   font-size: var(--text-3xl);
   max-width: 14ch;
   margin-bottom: var(--space-4);
 }
 .home-hero__title em {
   font-style: italic;
-  color: #ffd1a9;
+  color: var(--burnt-orange);
 }
 .home-hero__text {
   font-size: var(--text-md);
-  max-width: 36rem;
-  color: rgba(255, 255, 255, 0.92);
+  max-width: 34rem;
+  color: var(--ink-soft);
 }
 .home-hero__actions {
   display: flex;
@@ -1141,7 +1117,32 @@ a.tag:hover {
   margin-top: var(--space-5);
 }
 .home-hero__eyebrow {
-  color: #ffd1a9;
+  color: var(--burnt-orange);
+}
+.home-hero__collage {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3);
+}
+.home-hero__collage img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+.home-hero__collage > img:first-child {
+  grid-column: 1 / -1;
+  aspect-ratio: 16 / 7;
+}
+.home-hero__collage > img:not(:first-child) {
+  aspect-ratio: 4 / 3;
+}
+.home-hero__caption {
+  grid-column: 1 / -1;
+  margin: 0;
+  font-size: var(--text-xs);
+  color: var(--ink-muted);
 }
 
 /* Pillars strip */
@@ -1173,10 +1174,10 @@ a.tag:hover {
   color: var(--ink);
 }
 .pillar--research {
-  border-top-color: var(--bluebonnet);
+  border-top-color: var(--charcoal);
 }
 .pillar--service {
-  border-top-color: var(--cactus);
+  border-top-color: var(--shale);
 }
 .pillar__title {
   font-size: var(--text-lg);
@@ -1190,12 +1191,6 @@ a.tag:hover {
   font-style: italic;
   color: var(--burnt-orange);
   margin-bottom: var(--space-3);
-}
-.pillar--research .pillar__tagline {
-  color: var(--bluebonnet);
-}
-.pillar--service .pillar__tagline {
-  color: var(--cactus-text);
 }
 .pillar__text {
   color: var(--ink-soft);
@@ -1323,10 +1318,10 @@ a.tag:hover {
   color: #fff;
 }
 .audience-card--students {
-  background: linear-gradient(135deg, var(--burnt-orange) 0%, #8f4100 100%);
+  background: var(--burnt-orange);
 }
 .audience-card--donors {
-  background: linear-gradient(135deg, var(--bluebonnet) 0%, #003b54 100%);
+  background: var(--charcoal);
 }
 .audience-card__heading {
   color: #fff;
@@ -1342,14 +1337,10 @@ a.tag:hover {
 .cta-band--orange {
   background: var(--burnt-orange);
 }
-.cta-band--blue {
-  background: var(--bluebonnet);
-}
+.cta-band--blue,
+.cta-band--green,
 .cta-band--charcoal {
-  background: var(--charcoal);
-}
-.cta-band--green {
-  background: #3f7a2e;
+  background: var(--charcoal); /* legacy theme names all render charcoal */
 }
 .cta-band__inner {
   display: flex;
@@ -1378,18 +1369,17 @@ a.tag:hover {
   padding: var(--space-4) var(--space-5);
   border-radius: var(--radius);
   background: var(--sand);
-  border-left: 4px solid var(--bluebonnet);
+  border-left: 4px solid var(--charcoal);
 }
 .notice--launch {
-  border-left-color: var(--cactus);
-  background: #eef6ea;
+  border-left-color: var(--burnt-orange);
 }
 .notice--archive {
   border-left-color: var(--shale);
 }
 .notice--warn {
   border-left-color: var(--sunflower);
-  background: #fff6e8;
+  background: var(--sand);
 }
 
 /* 8. Cards ----------------------------------------------------------- */
@@ -1437,24 +1427,26 @@ a.tag:hover {
   background-color: var(--burnt-orange);
 }
 .story-card__placeholder--blue,
-.program-card__placeholder--blue {
-  background-color: var(--bluebonnet);
-}
-.story-card__placeholder--green,
-.program-card__placeholder--green {
-  background-color: var(--cactus);
-}
-.story-card__placeholder--teal,
-.program-card__placeholder--teal {
-  background-color: #007f8a;
-}
+.program-card__placeholder--blue,
 .story-card__placeholder--charcoal,
 .program-card__placeholder--charcoal {
   background-color: var(--charcoal);
 }
+.story-card__placeholder--green,
+.program-card__placeholder--green,
+.story-card__placeholder--teal,
+.program-card__placeholder--teal,
+.story-card__placeholder--shale,
+.program-card__placeholder--shale {
+  background-color: var(--shale);
+}
 .story-card__placeholder--gold,
-.program-card__placeholder--gold {
-  background-color: #c97d10;
+.program-card__placeholder--gold,
+.story-card__placeholder--limestone,
+.program-card__placeholder--limestone {
+  background-color: var(--limestone);
+  background-image: radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.5) 0, transparent 40%),
+    repeating-linear-gradient(135deg, rgba(51, 63, 72, 0.07) 0 2px, transparent 2px 14px);
 }
 .story-card__body,
 .program-card__body {
@@ -1478,7 +1470,7 @@ a.tag:hover {
   color: var(--ink-muted);
 }
 .story-card__region {
-  color: var(--burnt-orange-dark);
+  color: var(--burnt-orange);
 }
 .story-card__title,
 .program-card__title {
@@ -1582,7 +1574,10 @@ a.tag:hover {
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--burnt-orange-dark);
+  color: var(--burnt-orange);
+}
+.event-detail--past .event-card__type {
+  color: var(--charcoal);
 }
 .event-card__title {
   margin: 0 0 0.25rem;
@@ -1706,7 +1701,7 @@ a.tag:hover {
 .person__title {
   margin: 0;
   font-weight: 600;
-  color: var(--burnt-orange-dark);
+  color: var(--burnt-orange);
   font-size: var(--text-sm);
 }
 .person__subtitle {
@@ -1870,7 +1865,7 @@ h3.country-group__title {
 .timeline__year {
   display: block;
   font-weight: 700;
-  color: var(--burnt-orange-dark);
+  color: var(--burnt-orange);
   font-size: var(--text-sm);
   letter-spacing: 0.05em;
 }
@@ -1983,7 +1978,7 @@ h3.country-group__title {
 .resource__title {
   font-size: var(--text-md);
   margin-bottom: var(--space-2);
-  color: var(--bluebonnet);
+  color: var(--charcoal);
 }
 .resource:hover .resource__title {
   color: var(--burnt-orange);
@@ -2193,7 +2188,7 @@ h3.country-group__title {
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--burnt-orange-dark);
+  color: var(--charcoal);
   margin-bottom: var(--space-3);
 }
 .rail-links {
@@ -2392,8 +2387,8 @@ h3.country-group__title {
 .form__status {
   padding: var(--space-4) var(--space-5);
   border-radius: var(--radius);
-  background: #eef6ea;
-  border-left: 4px solid var(--cactus);
+  background: var(--sand);
+  border-left: 4px solid var(--charcoal);
 }
 .form__status--error {
   background: #fdecea;
@@ -2471,7 +2466,7 @@ h3.country-group__title {
   color: #fff;
 }
 .site-footer a:hover {
-  color: #ffd1a9;
+  color: var(--sunflower);
 }
 .site-footer__top {
   display: grid;
@@ -2493,7 +2488,7 @@ h3.country-group__title {
   color: #fff;
 }
 .brand--footer .logo__parent {
-  color: #ffd1a9;
+  color: var(--sunflower);
 }
 .site-footer__tagline {
   font-family: var(--font-serif);
@@ -2529,7 +2524,7 @@ h3.country-group__title {
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: #ffd1a9;
+  color: var(--sunflower);
   margin-bottom: var(--space-3);
 }
 .site-footer__col ul {

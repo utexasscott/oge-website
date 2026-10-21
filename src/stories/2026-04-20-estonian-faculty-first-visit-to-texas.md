@@ -7,7 +7,7 @@ regions: [Estonia]
 initiatives: [Faculty Exchange]
 audiences: [Faculty, Partner]
 author: "Office of Global Engagement"
-tone: teal
+tone: shale
 ---
 
 In April, two faculty members from Tallinn University's social work program stood before an audience at The University of Texas at Austin. It was the first visit to Texas by Estonian faculty, and it marked a new phase in a partnership that began more than a decade ago.

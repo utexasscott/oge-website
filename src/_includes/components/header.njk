@@ -1,11 +1,8 @@
 <header class="site-header" data-header>
   <div class="utility-bar">
     <div class="container utility-bar__inner">
-      <a class="utility-bar__parent" href="{{ site.parentUrl }}">
-        <span class="utility-bar__ut">{{ site.university }}</span>
-        <span class="utility-bar__sep" aria-hidden="true">·</span>
-        <span>{{ site.parent }}</span>
-      </a>
+      {# UT brand bar: parent-unit link (desktop only, Charis 14px white) per UMAC website guidelines #}
+      <a class="utility-bar__parent" href="{{ site.parentUrl }}">{{ site.parent }}</a>
       <ul class="utility-bar__links">
         {% for l in site.utilityLinks %}
           <li><a href="{{ l.url }}">{{ l.label }}</a></li>

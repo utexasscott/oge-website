@@ -7,7 +7,7 @@ regions: [India]
 initiatives: [Projects with Underserved Communities]
 audiences: [Student Experience, Faculty]
 author: "Office of Global Engagement"
-tone: gold
+tone: limestone
 ---
 
 Kallathupatti is a village of about 3,000 residents in Tamil Nadu, in southern India. In 2021, a children's library opened there. Four years later, a team of UT Austin undergraduates arrived with a different kind of project: not to build something new, but to find out how well what had already been built was working.

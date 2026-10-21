@@ -4,7 +4,7 @@ eyebrow: "Education Abroad · Service learning"
 description: "Projects with Underserved Communities (PUC): a yearlong service-learning sequence where social work and engineering undergraduates build a project abroad."
 summary: "A yearlong service-learning sequence pairing undergraduate social work and engineering students with communities abroad. 18,300+ people served."
 lede: "Spend a year designing a project with a community abroad, then travel to build it together. Social work and engineering students, side by side."
-tone: teal
+tone: shale
 pillars: [education, service]
 regions: [India, Costa Rica, Greece, Global]
 type: "Service learning"
@@ -32,7 +32,7 @@ cta:
   url: "https://global.utexas.edu/abroad/programs/service-learning/projects-underserved-communities"
   heading: "Serve across borders. Strengthen communities."
   text: "Applications are rolling, with a priority deadline each spring. Donor support keeps project costs within reach for every team member."
-  theme: green
+  theme: charcoal
   primary:
     label: "Support global service"
     url: "/give/"

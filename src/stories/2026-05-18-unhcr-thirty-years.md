@@ -8,7 +8,7 @@ regions: [Switzerland, Hungary]
 initiatives: [UNHCR Partnership, Global Practicum]
 audiences: [Student Experience, Partner]
 author: "Office of Global Engagement"
-tone: teal
+tone: shale
 ---
 
 <p class="notice notice--warn"><strong>Draft content.</strong> This story is pending an agency interview and OGE review before publication.</p>

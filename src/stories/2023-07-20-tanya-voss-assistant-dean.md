@@ -7,7 +7,7 @@ regions: [Global]
 initiatives: [Global Practicum, May Term]
 audiences: [Faculty, Staff]
 author: "UT Social Work Communications"
-tone: blue
+tone: charcoal
 externalUrl: https://socialwork.utexas.edu/professor-tanya-voss-to-serve-as-assistant-dean-for-global-engagement/
 ---
 

@@ -4,7 +4,7 @@ eyebrow: "Education Abroad · Short-term courses"
 description: "May Term courses from UT Social Work: the British welfare state and community practice in London, or social work leadership and advocacy in Washington, D.C."
 summary: "Earn credit in a few intensive weeks: comparative social welfare in London, or policy advocacy and leadership in Washington, D.C."
 lede: "A few intensive weeks, real credit and a new vantage point on social work. Study the British welfare state in London or policy leadership in Washington, D.C."
-tone: blue
+tone: charcoal
 pillars: [education]
 regions: [United Kingdom, "Washington, D.C."]
 type: "Short-term course"
@@ -30,7 +30,7 @@ cta:
   url: "https://global.utexas.edu/abroad/programs/short-term"
   heading: "Leave to Learn. Return to Lead."
   text: "May Term applications run through Texas Global. Donor support helps cover travel and living costs for students who could not otherwise go."
-  theme: blue
+  theme: charcoal
   primary:
     label: "Support global engagement"
     url: "/give/"

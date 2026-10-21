@@ -4,7 +4,7 @@ eyebrow: "Global Research · Peace and reconciliation"
 description: "Leading with Peace: Lessons from Northern Ireland, a President's Award for Global Learning project with Corrymeela on reconciliation and restorative justice."
 summary: "Leading with Peace: Lessons from Northern Ireland, a President's Award for Global Learning project on reconciliation, conflict and restorative justice."
 lede: "How does a society end a thirty-year conflict and keep the peace? Our Northern Ireland research asks that question with the people who lived it."
-tone: green
+tone: shale
 pillars: [research]
 regions: [Northern Ireland, Ireland]
 type: "Research area"
@@ -29,7 +29,7 @@ cta:
   url: "/education/from-texas-to-the-troubles/"
   heading: "Research that learns, serves and discovers."
   text: "Students can join this work through From Texas to the Troubles. Donors and partners sustain the fieldwork that makes it possible."
-  theme: green
+  theme: charcoal
   primary:
     label: "Support global research"
     url: "/give/"

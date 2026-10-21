@@ -4,7 +4,7 @@ eyebrow: "Education Abroad · Proposed pathway"
 description: "A proposed Global Social Work Certificate pathway combining coursework, the Global Practicum Seminar, a global experience and a capstone. In development."
 summary: "A proposed pathway that would recognize coursework, a global practicum or May Term, and a capstone reflection with a credential. Under development."
 lede: "A proposed pathway to recognize the global coursework, practice and reflection that many of our students already pursue, with a credential to show for it."
-tone: gold
+tone: limestone
 pillars: [education]
 regions: [Global]
 type: "Certificate (proposed)"

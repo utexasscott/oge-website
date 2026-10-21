@@ -57,7 +57,7 @@ git push
 | Resources | `/resources/international-students/` | Texas Global, Interstride, ATX Bridges, CARE counselor, etc. |
 | Give | `/give/` | Donor landing page with impact framing |
 
-Design: UT brand palette (burnt orange #BF5700, charcoal #333F48, bluebonnet, cactus, limestone), Libre Franklin + Source Serif 4 (free stand-ins for Benton Sans / a serif display face), responsive from 360px up, keyboard-accessible navigation, skip link, focus styles, reduced-motion support, print styles.
+Design: follows the UT Brand Center web guidelines. Palette is burnt orange #BF5700 and white with the supportive neutrals charcoal #333F48, limestone #D6D2C4 and shale #9CADB7 (accent colors are deliberately unused so burnt orange is never competed with); type is Libre Franklin and Charis SIL, the two typefaces UT approves for the web; photos are shown bright and uncovered; the footer carries the required Emergency Information, Site Policies, Web Accessibility Policy and Web Privacy Policy links and the standard copyright line, responsive from 360px up, keyboard-accessible navigation, skip link, focus styles, reduced-motion support, print styles.
 
 ## Content model (maps 1:1 to WordPress custom post types)
 

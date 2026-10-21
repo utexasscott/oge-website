@@ -46,7 +46,7 @@ Filters: `form.filters[data-story-filters]` with `select name="region|initiative
 
 ## Images
 
-Available in `/assets/img/`: `hero-oaxaca-wide.jpg` (1600×424 banner), `students-oaxaca.jpg` (900×1200 portrait), `chile.jpg` (1200×1200), and small 320×240 thumbnails `oaxaca-mural.jpg`, `new-zealand-mural.jpg`, `geneva-fountain.jpg`, `south-africa-sunset.jpg` (use only at card size), `ut-social-work-logo.png`, `world-map.png`. When no suitable photo exists, omit `image` and set `tone: orange|blue|green|teal|charcoal|gold` to get a branded placeholder. Never hot-link external images.
+Available in `/assets/img/`: `hero-oaxaca-wide.jpg` (1600×424 banner), `students-oaxaca.jpg` (900×1200 portrait), `chile.jpg` (1200×1200), and small 320×240 thumbnails `oaxaca-mural.jpg`, `new-zealand-mural.jpg`, `geneva-fountain.jpg`, `south-africa-sunset.jpg` (use only at card size), `ut-social-work-logo.png`, `world-map.png`. When no suitable photo exists, omit `image` and set `tone: orange|charcoal|shale|limestone` to get a branded placeholder tile (UT palette only). Never hot-link external images.
 
 ## Voice
 

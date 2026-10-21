@@ -4,7 +4,7 @@ eyebrow: "Global Research and Service · Texas–Mexico border"
 description: "TIES, the Texas Initiative Enhancing Rural-Border Solutions, connects local and global learning in rural and border communities along the Texas–Mexico border."
 summary: "A rural and border initiative that connects local and global learning along the Texas–Mexico border. Listed under Research and Service. Draft."
 lede: "Global engagement does not stop at the Rio Grande. TIES brings the School's research and service to rural and border communities where local and global meet every day."
-tone: blue
+tone: charcoal
 pillars: [research, service]
 regions: [Texas, Mexico]
 type: "Research and service initiative"
