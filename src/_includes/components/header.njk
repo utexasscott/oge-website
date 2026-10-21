@@ -1,0 +1,50 @@
+<header class="site-header" data-header>
+  <div class="utility-bar">
+    <div class="container utility-bar__inner">
+      <a class="utility-bar__parent" href="{{ site.parentUrl }}">
+        <span class="utility-bar__ut">{{ site.university }}</span>
+        <span class="utility-bar__sep" aria-hidden="true">·</span>
+        <span>{{ site.parent }}</span>
+      </a>
+      <ul class="utility-bar__links">
+        {% for l in site.utilityLinks %}
+          <li><a href="{{ l.url }}">{{ l.label }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+  <div class="container masthead">
+    <a class="brand" href="/" aria-label="{{ site.name }} home">
+      {% include "components/logo.njk" %}
+    </a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" data-nav-toggle>
+      <span class="nav-toggle__bars" aria-hidden="true"><span></span><span></span><span></span></span>
+      <span class="nav-toggle__label">Menu</span>
+    </button>
+    <nav class="primary-nav" id="primary-nav" aria-label="Primary" data-nav>
+      <ul class="primary-nav__list">
+        {% for item in site.nav %}
+          <li class="primary-nav__item {% if item.children %}has-children{% endif %} {% if page.url | isActive(item.url) %}is-current{% endif %}">
+            {% if item.children %}
+              <a class="primary-nav__link" href="{{ item.url }}">{{ item.label }}</a>
+              <button class="primary-nav__disclosure" type="button" aria-expanded="false" aria-label="{{ item.label }} submenu" aria-controls="submenu-{{ item.label | slug }}" data-submenu-toggle>
+                <svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </button>
+              <ul class="submenu" id="submenu-{{ item.label | slug }}">
+                {% for c in item.children %}
+                  <li><a href="{{ c.url }}" {% if page.url == c.url %}aria-current="page"{% endif %}>{{ c.label }}</a></li>
+                {% endfor %}
+              </ul>
+            {% else %}
+              <a class="primary-nav__link" href="{{ item.url }}" {% if page.url == item.url %}aria-current="page"{% endif %}>{{ item.label }}</a>
+            {% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+      <div class="primary-nav__ctas">
+        <a class="btn btn--sm btn--outline" href="/education/student-opportunities/">For Students</a>
+        <a class="btn btn--sm btn--primary" href="/give/">Give</a>
+      </div>
+    </nav>
+  </div>
+</header>

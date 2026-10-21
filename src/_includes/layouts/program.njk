@@ -1,0 +1,85 @@
+---
+layout: layouts/base.njk
+---
+{#
+  Program / initiative template. Front matter:
+    title, eyebrow, summary (card text), lede (hero intro), image, imageAlt, pillars[], regions[], type,
+    audience (who it's for), format (e.g. "Semester-long practicum"), when, credit, partners[],
+    contact {name,title,email,url}, cta {label,url}, secondaryCta {label,url}, facts [{label,value}],
+    order, tone, status ("active"|"past"|"launching"), related [{label,url}]
+#}
+{% set hero = { image: image, alt: imageAlt, size: "tall" } if image else null %}
+{% set breadcrumbs = breadcrumbs or [] %}
+{% include "components/page-hero.njk" %}
+
+<div class="container layout-sidebar">
+  <article class="prose" id="content">
+    {% if status == "launching" %}<p class="notice notice--launch"><strong>New for {{ launchTerm or "2026" }}.</strong> {{ launchNote or "Applications open soon. Join our listserv to be notified." }}</p>{% endif %}
+    {% if status == "past" %}<p class="notice notice--archive"><strong>Archived program.</strong> This page is maintained as part of the historical record of OGE partnerships and initiatives.</p>{% endif %}
+    {{ content | safe }}
+  </article>
+
+  <aside class="rail" aria-label="Program details">
+    {% if facts and facts.length %}
+    <div class="rail-block facts">
+      <h2 class="rail-heading">At a glance</h2>
+      <dl class="facts__list">
+        {% for f in facts %}<div><dt>{{ f.label }}</dt><dd>{{ f.value | markdownInline | safe }}</dd></div>{% endfor %}
+      </dl>
+    </div>
+    {% endif %}
+    {% if cta or secondaryCta %}
+    <div class="rail-block rail-actions">
+      {% if cta %}<a class="btn btn--primary btn--block" href="{{ cta.url }}">{{ cta.label }}</a>{% endif %}
+      {% if secondaryCta %}<a class="btn btn--outline btn--block" href="{{ secondaryCta.url }}">{{ secondaryCta.label }}</a>{% endif %}
+    </div>
+    {% endif %}
+    {% if contact %}{% set card = contact %}{% include "components/contact-card.njk" %}{% endif %}
+    {% if partners and partners.length %}
+    <div class="rail-block">
+      <h2 class="rail-heading">Partners</h2>
+      <ul class="rail-links">{% for p in partners %}<li>{{ p }}</li>{% endfor %}</ul>
+    </div>
+    {% endif %}
+    {% if pillars and pillars.length %}
+    <div class="rail-block">
+      <h2 class="rail-heading">Part of</h2>
+      <ul class="pillar-list">
+        {% for p in pillars %}<li><a class="pillar-chip pillar-chip--{{ p }}" href="/{{ p }}/">{{ p | capitalize }}</a></li>{% endfor %}
+      </ul>
+    </div>
+    {% endif %}
+    {% if related and related.length %}
+    <div class="rail-block">
+      <h2 class="rail-heading">Related</h2>
+      <ul class="rail-links">{% for r in related %}<li><a href="{{ r.url }}">{{ r.label }}</a></li>{% endfor %}</ul>
+    </div>
+    {% endif %}
+    <nav class="rail-block rail-toc" aria-label="On this page" data-toc hidden>
+      <h2 class="rail-heading">On this page</h2>
+      <ul class="rail-links" data-toc-list></ul>
+    </nav>
+  </aside>
+</div>
+
+{# Stories tagged with this initiative #}
+{% set tagged = [] %}
+{% for s in collections.publishedStories %}
+  {% if initiativeTag and s.data.initiatives and initiativeTag in s.data.initiatives and tagged.length < 3 %}
+    {% set tagged = (tagged.push(s), tagged) %}
+  {% endif %}
+{% endfor %}
+{% if tagged.length %}
+<section class="section section--sand" aria-labelledby="program-stories">
+  <div class="container">
+    <div class="section__head">
+      <h2 id="program-stories" class="section__title">Stories from {{ title }}</h2>
+      <a class="section__more" href="/stories/?initiative={{ initiativeTag | slug }}">All related stories</a>
+    </div>
+    <div class="card-grid card-grid--3">
+      {% for story in tagged %}{% include "components/story-card.njk" %}{% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+{% include "components/cta-band.njk" %}

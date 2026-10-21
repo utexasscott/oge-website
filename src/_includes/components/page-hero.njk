@@ -1,0 +1,14 @@
+{# Interior page hero: optional photo, breadcrumbs, eyebrow, title, lede #}
+<header class="page-hero {% if hero and hero.image %}page-hero--photo page-hero--{{ hero.size or 'short' }}{% else %}page-hero--plain{% endif %}">
+  {% if hero and hero.image %}
+    <div class="page-hero__media">
+      <img src="{{ hero.image }}" alt="{{ hero.alt or '' }}" loading="eager" fetchpriority="high">
+    </div>
+  {% endif %}
+  <div class="container page-hero__inner">
+    {% include "components/breadcrumbs.njk" %}
+    {% if eyebrow %}<p class="eyebrow">{{ eyebrow }}</p>{% endif %}
+    <h1 class="page-hero__title">{{ title }}</h1>
+    {% if lede %}<p class="lede">{{ lede }}</p>{% endif %}
+  </div>
+</header>

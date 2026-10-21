@@ -1,0 +1,131 @@
+---
+layout: layouts/base.njk
+title: Global Research
+description: "Faculty partnerships in Chile, Northern Ireland, Puerto Rico and Estonia advance evidence on peace, parenting, health equity and the social work workforce."
+eyebrow: Research
+lede: "Discover across borders. OGE supports faculty research that learns from partners worldwide and brings evidence home to practice."
+hero:
+  image: /assets/img/chile.jpg
+  alt: "Aerial view of Santiago, Chile, with the Andes rising behind the city"
+permalink: /research/
+---
+{% include "components/page-hero.njk" %}
+
+{# ---------- Focus statement ---------- #}
+<section class="section" aria-labelledby="focus-title">
+  <div class="container">
+    <div class="split">
+      <div class="flow">
+        <p class="eyebrow">Research focus</p>
+        <h2 class="section__title" id="focus-title">Questions that cross borders</h2>
+        <p class="lede">Social workers address society's greatest challenges at home and abroad. Our global research builds the partnerships and evidence to meet them.</p>
+        <p>The Office of Global Engagement fosters collaboration between the School and universities, research institutions and organizations worldwide. Our faculty's international work concentrates in four areas:</p>
+        <ul class="feature-list">
+          <li><strong>Reconciliation and peace.</strong> How conflict and violence spread, what they cost, and how peacemaking and restorative justice can shape leaders, studied in Northern Ireland with Corrymeela.</li>
+          <li><strong>Parenting and child well-being.</strong> Cultural adaptation and large-scale dissemination of a parenting intervention in Chile with Fundación San Carlos de Maipo, and co-teaching in Chile's first clinical master's program in social work.</li>
+          <li><strong>Health equity and research capacity.</strong> Cortando la Brecha builds capacity among early- and mid-career Puerto Rican scholars responding to health and mental health disparities worsened by natural disasters and out-migration.</li>
+          <li><strong>Workforce and education.</strong> Doctoral education and faculty exchange with Tallinn University in Estonia, and clinical faculty rotations that strengthen social work training in Chile.</li>
+        </ul>
+      </div>
+      <figure class="split__media">
+        <blockquote class="pullquote">A global perspective makes us a humbler people and more accountable for our privileges.</blockquote>
+        <figcaption class="pullquote-cite">Rubén Parra-Cardona, Ph.D., Professor and founding Associate Dean for Global Engagement</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+{# ---------- Research areas ---------- #}
+<section class="section section--sand" aria-labelledby="areas-title">
+  <div class="container">
+    <div class="section__head">
+      <div>
+        <p class="eyebrow">Research areas</p>
+        <h2 class="section__title" id="areas-title">Where the work happens</h2>
+        <p class="section__intro">Signature partnerships, each with its own page describing the collaboration, the faculty involved and what comes next.</p>
+      </div>
+    </div>
+    {% if collections.programs_research and collections.programs_research.length %}
+      <div class="card-grid card-grid--3">
+        {% for program in collections.programs_research %}{% include "components/program-card.njk" %}{% endfor %}
+      </div>
+    {% else %}
+      <div class="prose">
+        <ul>
+          <li><a href="/research/northern-ireland/">Northern Ireland</a>: reconciliation, constructive dialogue and leadership in divided societies.</li>
+          <li><a href="/research/chile/">Chile</a>: the Clinical Master's Program Collaboration with Pontificia Universidad Católica de Chile and a parenting intervention with Fundación San Carlos de Maipo.</li>
+          <li><a href="/research/ties/">TIES</a>: Texas Initiative Enhancing Rural-Border Solutions.</li>
+        </ul>
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+{# ---------- Faculty research preview ---------- #}
+<section class="section" aria-labelledby="faculty-title">
+  <div class="container">
+    <div class="section__head">
+      <div>
+        <p class="eyebrow">Faculty research</p>
+        <h2 class="section__title" id="faculty-title">Faculty working across borders</h2>
+        <p class="section__intro">A sample of the School's faculty whose scholarship is global in scope.</p>
+      </div>
+      <a class="section__more" href="/research/faculty/">All faculty research</a>
+    </div>
+    <div class="people-grid people-grid--3">
+      {% for f in research.faculty | limit(3) %}
+        <article class="person person--stack">
+          <span class="person__initials" aria-hidden="true">{{ f.initials }}</span>
+          <div>
+            <h3 class="person__name"><a href="{{ f.url }}">{{ f.name }}</a></h3>
+            <p class="person__title">{{ f.title }}</p>
+            {% if f.regions and f.regions.length %}
+              <ul class="tag-list person__focus" aria-label="Regions">
+                {% for r in f.regions %}<li class="tag">{{ r }}</li>{% endfor %}
+              </ul>
+            {% endif %}
+            <p class="person__bio">{{ f.summary }}</p>
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{# ---------- Partners + coming soon ---------- #}
+<section class="section section--sand" aria-labelledby="partners-title">
+  <div class="container">
+    <div class="split">
+      <div class="flow">
+        <p class="eyebrow">Research partners</p>
+        <h2 class="section__title" id="partners-title">Institutions we work with</h2>
+        <ul class="feature-list">
+          <li><strong>Pontificia Universidad Católica de Chile</strong>, Santiago: an alliance of about 11 years, including Chile's first clinical master's in social work.</li>
+          <li><strong>Fundación San Carlos de Maipo</strong>, Chile: parenting intervention adaptation and dissemination.</li>
+          <li><strong>Corrymeela</strong>, Ballycastle, Northern Ireland: partner in "Leading with Peace: Lessons from Northern Ireland."</li>
+          <li><strong>Tallinn University</strong>, Estonia: doctoral education and Erasmus+ faculty exchange.</li>
+          <li><strong>UT Latino Research Institute</strong> and <strong>George Washington University's Gill-Lebovic Center for Community Health in the Caribbean and Latin America</strong>: partners in Cortando la Brecha, with a research collaboration at Ponce Medical School.</li>
+          <li><strong>Universidad Autónoma de Baja California</strong> and <strong>UNAM</strong>, Mexico: faculty-led initiatives and visiting scholars.</li>
+        </ul>
+        <a class="btn btn--outline" href="/about/partners/">See all partners</a>
+      </div>
+      <div class="split__media">
+        <div class="notice notice--launch flow">
+          <p class="eyebrow">Coming soon</p>
+          <h3>Global research, pulled automatically</h3>
+          <p>In the medium term, this page will draw directly from the School's research database. Faculty will tag entries "global," and tagged projects, publications and grants will appear here automatically, keeping the picture of the School's international scholarship current without a separate submission.</p>
+          <p class="small muted">Until then, faculty can <a href="/connect/">contact OGE</a> to have their global work added to the <a href="/research/faculty/">Faculty Research</a> page.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% set cta = {
+  theme: "blue",
+  heading: "Fuel discovery across borders",
+  text: "Your support helps develop innovative solutions to global social challenges. Partner with us to transform lives globally through research, education and practice.",
+  primary: { label: "Support global research", url: "/give/" },
+  secondary: { label: "Partner with us", url: "/about/partners/#partner-with-us" }
+} %}
+{% include "components/cta-band.njk" %}

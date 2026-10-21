@@ -1,0 +1,100 @@
+[
+  {
+    "_verify": "PLACEHOLDER: date, time and room are not in docs/CONTENT-SOURCES.md; confirm with OGE before publishing.",
+    "title": "Global Practicum Information Session: Spring 2027 Placements",
+    "start": "2026-10-28",
+    "time": "12:00–1:00 p.m. CT",
+    "location": "Walter Webb Hall 1.102 and Zoom",
+    "type": "Info Session",
+    "region": "Global",
+    "initiative": "Global Practicum",
+    "audience": "Students",
+    "description": "Learn how to complete your final MSSW practicum in Santiago, Oaxaca, Wellington, Cape Town or with UNHCR in Geneva and Budapest. Faculty liaisons will walk through eligibility, language requirements, costs, funding and the application timeline.",
+    "registration": "/connect/listserv/"
+  },
+  {
+    "_verify": "PLACEHOLDER: date, time, room and whether a 2027 cohort is planned are unconfirmed.",
+    "title": "From Texas to the Troubles: Summer 2027 Interest Meeting",
+    "start": "2026-11-05",
+    "time": "5:30–6:30 p.m. CT",
+    "location": "Walter Webb Hall Commons",
+    "type": "Info Session",
+    "region": "Northern Ireland",
+    "initiative": "From Texas to the Troubles",
+    "audience": "Students, Faculty",
+    "description": "Meet the faculty leads and hear from the inaugural 2026 cohort about studying constructive dialogue and leadership in divided societies across Austin, Dublin and Belfast.",
+    "registration": "/connect/listserv/"
+  },
+  {
+    "_verify": "PLACEHOLDER DEADLINE: no global practicum deadline appears in the sources; replace with the real date or remove.",
+    "title": "Priority Application Deadline: Global Practicum, Spring 2027",
+    "start": "2026-11-14",
+    "location": "Online application",
+    "type": "Deadline",
+    "region": "Global",
+    "initiative": "Global Practicum",
+    "audience": "Students",
+    "description": "Priority deadline for MSSW students seeking an advanced Clinical or Administrative and Policy Practice practicum abroad in spring 2027.",
+    "registration": "/education/practicum/"
+  },
+  {
+    "_verify": "PLACEHOLDER: showcase date, time and room are unconfirmed.",
+    "title": "Global Stories Showcase: Student Reflections from Four Continents",
+    "start": "2026-12-03",
+    "time": "4:00–6:00 p.m. CT",
+    "location": "Walter Webb Hall Commons",
+    "type": "Showcase",
+    "region": "Global",
+    "initiative": "Global Practicum",
+    "audience": "Everyone",
+    "description": "Returning global practicum students and Projects with Underserved Communities teams present what they learned abroad. Open to the School community, alumni and friends.",
+    "registration": "/connect/listserv/"
+  },
+  {
+    "_verify": "PLACEHOLDER DEADLINE: extrapolated from the 2026–27 cycle (priority April 6, 2026; rolling through Aug 14, 2026). Confirm the 2027–28 dates with Texas Global.",
+    "title": "Projects with Underserved Communities: 2027–28 Priority Application Deadline",
+    "start": "2027-04-05",
+    "location": "Online application (Texas Global)",
+    "type": "Deadline",
+    "region": "Global",
+    "initiative": "Projects with Underserved Communities",
+    "audience": "Undergraduate students",
+    "description": "Priority deadline for undergraduate social work and engineering students to join the yearlong PUC course sequence. Applications are accepted on a rolling basis through mid-August.",
+    "registration": "https://global.utexas.edu/abroad/programs/service-learning/projects-underserved-communities"
+  },
+  {
+    "_verify": "Sources say only 'April 2026'; exact day, time, room and talk title are unconfirmed.",
+    "title": "Visiting Scholars Lecture: Estonian Perspectives on Child Protection and Mental Well-being",
+    "start": "2026-04-16",
+    "time": "12:00–1:30 p.m. CT",
+    "location": "Walter Webb Hall 1.102",
+    "type": "Lecture",
+    "region": "Estonia",
+    "initiative": "Faculty Exchange",
+    "audience": "Everyone",
+    "description": "Merike Sisask, Ph.D., and Karmen Toros, Ph.D., of Tallinn University present on suicide prevention and child protection research through the Erasmus+ partnership. The first visit to Texas by Estonian social work faculty."
+  },
+  {
+    "_verify": "Sources say only 'late Oct 2025'; exact day, time and venue are unconfirmed.",
+    "title": "Constructive Dialogue, Poetry and Social Imagination",
+    "start": "2025-10-23",
+    "time": "6:00–8:00 p.m. CT",
+    "location": "Walter Webb Hall Commons",
+    "type": "Public Event",
+    "region": "Northern Ireland",
+    "initiative": "From Texas to the Troubles",
+    "audience": "Everyone",
+    "description": "An evening with Glenn Patterson, Leontia Flynn, Dawn Watson and Rachel Brown of the Seamus Heaney Centre at Queen's University Belfast, presented with the Consulate General of Ireland in Austin."
+  },
+  {
+    "_verify": "Sources say only 'early Nov 2025'; exact day and venue are unconfirmed.",
+    "title": "President's Award for Global Learning Showcase",
+    "start": "2025-11-06",
+    "location": "UT Austin campus",
+    "type": "Showcase",
+    "region": "India",
+    "initiative": "Projects with Underserved Communities",
+    "audience": "Everyone",
+    "description": "Dr. Farya Phillips and the PUC India team present findings from their community evaluation work in Tamil Nadu."
+  }
+]

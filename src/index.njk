@@ -1,0 +1,162 @@
+---
+layout: layouts/base.njk
+title: Office of Global Engagement
+description: "The Office of Global Engagement leads the Steve Hicks School of Social Work's global education, research and service, with practicums on four continents and partnerships worldwide."
+bodyClass: home
+---
+{# ---------- Hero ---------- #}
+<section class="home-hero" aria-labelledby="hero-title">
+  <div class="home-hero__media">
+    <img src="/assets/img/students-oaxaca.jpg" alt="A green tiled passageway in Oaxaca, Mexico, one of the School's global practicum sites" fetchpriority="high">
+  </div>
+  <div class="container home-hero__inner">
+    <p class="eyebrow home-hero__eyebrow">Steve Hicks School of Social Work · Office of Global Engagement</p>
+    <h1 class="home-hero__title" id="hero-title">Leave to <em>learn.</em><br>Return to <em>lead.</em></h1>
+    <p class="home-hero__text">Global engagement that learns, serves, and discovers. We connect social work students, faculty and partners across four continents to address society's greatest challenges at home and abroad.</p>
+    <div class="home-hero__actions">
+      <a class="btn btn--primary btn--lg" href="/education/student-opportunities/">Explore student opportunities</a>
+      <a class="btn btn--ghost-light btn--lg" href="/give/">Support our work</a>
+    </div>
+  </div>
+</section>
+
+{# ---------- Pillars ---------- #}
+<section class="section section--sand" aria-labelledby="pillars-title">
+  <div class="container">
+    <div class="section__head">
+      <div>
+        <p class="eyebrow">What we do</p>
+        <h2 class="section__title" id="pillars-title">Three ways to engage the world</h2>
+        <p class="section__intro">OGE leads, supports and coordinates the School's global work across education, research and service, building partnerships on campus and around the globe.</p>
+      </div>
+    </div>
+    <div class="pillars">
+      <a class="pillar" href="/education/" aria-labelledby="pillar-education">
+        <h3 class="pillar__title" id="pillar-education">Education Abroad</h3>
+        <p class="pillar__tagline">Leave to Learn. Return to Lead.</p>
+        <p class="pillar__text">Complete your final practicum in Santiago, Oaxaca, Wellington, Cape Town or with UNHCR in Geneva and Budapest. Study peace in Northern Ireland. Earn credit in London or Washington, D.C.</p>
+        <span class="pillar__link">Explore programs</span>
+      </a>
+      <a class="pillar pillar--research" href="/research/" aria-labelledby="pillar-research">
+        <h3 class="pillar__title" id="pillar-research">Global Research</h3>
+        <p class="pillar__tagline">Discover across borders.</p>
+        <p class="pillar__text">Faculty partnerships in Chile, Northern Ireland, Puerto Rico and Estonia advance evidence on parenting, reconciliation, health equity and the social work workforce.</p>
+        <span class="pillar__link">See research areas</span>
+      </a>
+      <a class="pillar pillar--service" href="/service/" aria-labelledby="pillar-service">
+        <h3 class="pillar__title" id="pillar-service">Global Service</h3>
+        <p class="pillar__tagline">Serve across borders. Strengthen communities.</p>
+        <p class="pillar__text">Through Projects with Underserved Communities, Longhorns have co-designed water, housing, health and learning projects with communities on four continents.</p>
+        <span class="pillar__link">Get involved</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+{# ---------- Stories feed ---------- #}
+<section class="section" aria-labelledby="stories-title">
+  <div class="container">
+    <div class="section__head">
+      <div>
+        <p class="eyebrow">Global Stories</p>
+        <h2 class="section__title" id="stories-title">From the field</h2>
+        <p class="section__intro">Student experiences, faculty research and partner spotlights from across the School's global community.</p>
+      </div>
+      <a class="section__more" href="/stories/">Browse the stories archive</a>
+    </div>
+    {% set featured = collections.publishedStories | where("featured", true) | limit(1) %}
+    {% set rest = [] %}
+    {% for s in collections.publishedStories %}
+      {% if (featured.length == 0 or s.url != featured[0].url) and rest.length < 3 %}{% set rest = (rest.push(s), rest) %}{% endif %}
+    {% endfor %}
+    <div class="card-grid card-grid--3">
+      {% if featured.length %}{% set story = featured[0] %}{% set variant = "featured" %}{% include "components/story-card.njk" %}{% set variant = null %}{% endif %}
+      {% for story in rest %}{% include "components/story-card.njk" %}{% endfor %}
+    </div>
+  </div>
+</section>
+
+{# ---------- Map ---------- #}
+<section class="section section--sand" aria-labelledby="map-title">
+  <div class="container">
+    <div class="section__head">
+      <div>
+        <p class="eyebrow">Where we work</p>
+        <h2 class="section__title" id="map-title">A global footprint, rooted in Texas</h2>
+        <p class="section__intro">Hover or tab through the pins to see our practicum sites, signature programs and research partnerships. Explore the full directory of partners, past and present.</p>
+      </div>
+      <a class="section__more" href="/about/partners/">All partners</a>
+    </div>
+    {% include "components/world-map.njk" %}
+  </div>
+</section>
+
+{# ---------- Impact stats + quote ---------- #}
+<section class="section section--charcoal" aria-labelledby="impact-title">
+  <div class="container">
+    <div class="split split--wide-media">
+      <div>
+        <p class="eyebrow eyebrow--light">Impact</p>
+        <h2 id="impact-title">More than 30 years of global social work</h2>
+        <ul class="stats">
+          <li class="stat"><span class="stat__value">1993</span><span class="stat__label">First international placement, with UNHCR in Geneva — a partnership now in its fourth decade</span></li>
+          <li class="stat"><span class="stat__value">20</span><span class="stat__label">Countries where MSSW students have completed faculty-led academic internships</span></li>
+          <li class="stat"><span class="stat__value"><span class="visually-hidden">Nearly </span>~300</span><span class="stat__label">Longhorns who have served with communities on four continents through Projects with Underserved Communities</span></li>
+          <li class="stat"><span class="stat__value">1<span class="visually-hidden">st</span><span aria-hidden="true">st</span></span><span class="stat__label">Clinical master's degree in social work in Chile, built with Pontificia Universidad Católica</span></li>
+        </ul>
+      </div>
+      <figure>
+        <blockquote class="pullquote">When a member of our social work community engages globally, we believe they leave to learn and return to lead.</blockquote>
+        <figcaption class="pullquote-cite">Noël Busch-Armendariz, Ph.D., Associate Dean for Global Engagement</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+{# ---------- Signature programs ---------- #}
+<section class="section" aria-labelledby="programs-title">
+  <div class="container">
+    <div class="section__head">
+      <div>
+        <p class="eyebrow">Signature programs</p>
+        <h2 class="section__title" id="programs-title">Opportunities for students</h2>
+      </div>
+      <a class="section__more" href="/education/student-opportunities/">All opportunities</a>
+    </div>
+    <div class="card-grid card-grid--4">
+      {% for program in collections.programs_education | limit(4) %}{% include "components/program-card.njk" %}{% endfor %}
+    </div>
+  </div>
+</section>
+
+{# ---------- Events + Connect ---------- #}
+<section class="section section--sand" aria-labelledby="events-title">
+  <div class="container split">
+    <div>
+      <div class="section__head">
+        <div>
+          <p class="eyebrow">Upcoming</p>
+          <h2 class="section__title" id="events-title">Events &amp; deadlines</h2>
+        </div>
+        <a class="section__more" href="/events/">Full calendar</a>
+      </div>
+      {% if eventsSorted.upcoming.length %}
+        {% for event in eventsSorted.upcoming | limit(4) %}{% include "components/event-card.njk" %}{% endfor %}
+      {% else %}
+        <p class="empty-state">No upcoming events are scheduled. Join our listserv to hear about the next information session.</p>
+      {% endif %}
+    </div>
+    <div class="flow">
+      <p class="eyebrow">Stay connected</p>
+      <h2>Hear about global opportunities first</h2>
+      <p>Join the OGE listserv for practicum information sessions, application deadlines, visiting scholar lectures and new global stories. Students, faculty, alumni and partners welcome.</p>
+      <div class="btn-row mt-0">
+        <a class="btn btn--primary" href="/connect/listserv/">Join the listserv</a>
+        <a class="btn btn--outline" href="/connect/">Contact the office</a>
+      </div>
+      <p class="small muted">International student at the School? Find support, career tools and community resources on our <a href="/resources/international-students/">international student resources page</a>.</p>
+    </div>
+  </div>
+</section>
+
+{% include "components/cta-band.njk" %}

@@ -1,0 +1,26 @@
+{
+  "name": "oge-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Office of Global Engagement — Steve Hicks School of Social Work, The University of Texas at Austin",
+  "type": "module",
+  "scripts": {
+    "start": "eleventy --serve --port=8080",
+    "dev": "eleventy --serve --port=8080",
+    "clean": "node -e \"require('fs').rmSync('_site',{recursive:true,force:true})\"",
+    "build": "npm run clean && eleventy",
+    "build:prod": "npm run clean && cross-env ELEVENTY_ENV=production eleventy",
+    "build:prod:subdir": "npm run clean && cross-env ELEVENTY_ENV=production eleventy --pathprefix=/global/",
+    "preview": "npm run build && npx -y serve _site -l 8080",
+    "check": "node scripts/check-links.mjs"
+  },
+  "dependencies": {
+    "@11ty/eleventy": "^3.1.7",
+    "@11ty/eleventy-plugin-rss": "^2.0.4",
+    "@svg-maps/world": "^2.0.0",
+    "cross-env": "^7.0.3",
+    "luxon": "^3.6.1",
+    "markdown-it": "^14.1.0",
+    "markdown-it-anchor": "^9.2.0"
+  }
+}

@@ -1,0 +1,75 @@
+---
+layout: layouts/base.njk
+---
+{#
+  Global Story template. Front matter:
+    title, date, summary, image, imageAlt, imageCredit, regions[], initiatives[], audiences[],
+    author, draft (bool), featured (bool), externalUrl (optional), tone (placeholder colour)
+#}
+<article class="story">
+  <header class="story__header">
+    <div class="container layout-prose">
+      {% set breadcrumbs = [{ label: "Global Stories", url: "/stories/" }] %}
+      {% include "components/breadcrumbs.njk" %}
+      <p class="story__meta">
+        {% if draft %}<span class="badge badge--draft">Draft: pending review</span>{% endif %}
+        <time datetime="{{ page.date | isoDate }}">{{ page.date | date }}</time>
+        {% if author %}<span>By {{ author }}</span>{% endif %}
+      </p>
+      <h1 class="story__title">{{ title }}</h1>
+      {% if summary %}<p class="lede">{{ summary }}</p>{% endif %}
+      <ul class="tag-list story__tags" aria-label="Topics">
+        {% for r in regions %}<li><a class="tag" href="/stories/?region={{ r | slug }}">{{ r }}</a></li>{% endfor %}
+        {% for i in initiatives %}<li><a class="tag tag--initiative" href="/stories/?initiative={{ i | slug }}">{{ i }}</a></li>{% endfor %}
+        {% for a in audiences %}<li><a class="tag tag--audience" href="/stories/?audience={{ a | slug }}">{{ a }}</a></li>{% endfor %}
+      </ul>
+    </div>
+  </header>
+  {% if image %}
+    <figure class="story__figure container">
+      <img src="{{ image }}" alt="{{ imageAlt or '' }}" loading="eager">
+      {% if imageCredit %}<figcaption>{{ imageCredit }}</figcaption>{% endif %}
+    </figure>
+  {% endif %}
+  <div class="container layout-prose">
+    <div class="prose story__body">
+      {{ content | safe }}
+      {% if externalUrl %}
+        <p class="story__external"><a class="btn btn--outline" href="{{ externalUrl }}">Read the full story on the School website</a></p>
+      {% endif %}
+    </div>
+  </div>
+  <footer class="container layout-prose story__footer">
+    {% set shareUrl = (site.url + page.url) | urlencode %}
+    <div class="share">
+      <span>Share:</span>
+      <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ shareUrl }}">LinkedIn</a>
+      <a href="https://www.facebook.com/sharer/sharer.php?u={{ shareUrl }}">Facebook</a>
+      <a href="mailto:?subject={{ title | urlencode }}&amp;body={{ shareUrl }}">Email</a>
+    </div>
+  </footer>
+</article>
+
+{% set related = [] %}
+{% for s in collections.publishedStories %}
+  {% if s.url != page.url and related.length < 3 %}
+    {% set overlap = false %}
+    {% for r in regions %}{% if s.data.regions and r in s.data.regions %}{% set overlap = true %}{% endif %}{% endfor %}
+    {% for i in initiatives %}{% if s.data.initiatives and i in s.data.initiatives %}{% set overlap = true %}{% endif %}{% endfor %}
+    {% if overlap %}{% set related = (related.push(s), related) %}{% endif %}
+  {% endif %}
+{% endfor %}
+{% if related.length %}
+<section class="section section--sand" aria-labelledby="related-heading">
+  <div class="container">
+    <div class="section__head">
+      <h2 id="related-heading" class="section__title">Related stories</h2>
+      <a class="section__more" href="/stories/">All global stories</a>
+    </div>
+    <div class="card-grid card-grid--3">
+      {% for story in related %}{% include "components/story-card.njk" %}{% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+{% include "components/cta-band.njk" %}

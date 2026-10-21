@@ -1,0 +1,143 @@
+---
+layout: layouts/base.njk
+title: Partners
+description: "Universities, agencies, foundations and international organizations that partner with the Office of Global Engagement, from UNHCR to Pontificia UC Chile."
+eyebrow: About OGE
+lede: "Our partners make global engagement possible. This directory is both a map of where the School works today and a historical record of the partnerships that shaped it."
+permalink: /about/partners/
+breadcrumbs:
+  - label: About
+    url: /about/
+---
+{% include "components/page-hero.njk" %}
+
+{# ---------- Philosophy ---------- #}
+<section class="section" aria-labelledby="philosophy-title">
+  <div class="container split">
+    <div class="flow">
+      <p class="eyebrow">Our approach to partnership</p>
+      <h2 class="mt-0" id="philosophy-title">Partnerships built to last</h2>
+      <p>OGE fosters strategic partnerships both on campus and internationally. The School's longest-standing relationship, with UNHCR in Geneva, began in 1993, and its alliance with Pontificia Universidad Católica de Chile has grown over more than a decade into Chile's first clinical master's degree in social work.</p>
+      <p>We partner with universities, community agencies, foundations, research institutes and international organizations whose missions align with ours: to understand social issues in diverse cultural contexts, to develop innovative solutions to global social challenges and to strengthen communities at home and abroad.</p>
+    </div>
+    <div class="flow">
+      <p class="notice notice--archive"><strong>A living record.</strong> This directory is maintained as the historical record of the School's global partnerships. Partnerships that have concluded remain listed and are marked as past partnerships rather than removed.</p>
+      <ul class="stats">
+        <li class="stat"><span class="stat__value">{{ partners.partners | where("status", "active") | length }}</span><span class="stat__label">Current partners</span></li>
+        <li class="stat"><span class="stat__value">{{ partners.partners | flattenKey("country") | length }}</span><span class="stat__label">Countries and territories</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+{# ---------- Map ---------- #}
+<section class="section section--sand" aria-labelledby="map-title">
+  <div class="container">
+    <div class="section__head">
+      <div>
+        <p class="eyebrow">Where we work</p>
+        <h2 class="section__title" id="map-title">A global footprint, rooted in Texas</h2>
+        <p class="section__intro">Hover or tab through the pins to see practicum sites, signature programs and research partnerships, or browse the full directory below.</p>
+      </div>
+    </div>
+    {% include "components/world-map.njk" %}
+  </div>
+</section>
+
+{# ---------- Directory grouped by region and country ---------- #}
+{% set byRegion = partners.partners | groupby("region") %}
+{% set regionOrder = ["North America", "South America", "Europe", "Africa", "Asia", "Oceania"] %}
+{% set orderedRegions = [] %}
+{% for r in regionOrder %}{% if byRegion[r] %}{% set orderedRegions = (orderedRegions.push(r), orderedRegions) %}{% endif %}{% endfor %}
+{% for r, list in byRegion %}{% if r not in regionOrder %}{% set orderedRegions = (orderedRegions.push(r), orderedRegions) %}{% endif %}{% endfor %}
+
+<section class="section" aria-labelledby="directory-title">
+  <div class="container">
+    <div class="section__head">
+      <div>
+        <p class="eyebrow">Partner directory</p>
+        <h2 class="section__title" id="directory-title">Partners by region</h2>
+        <p class="section__intro">Jump to a region:
+          {% for r in orderedRegions %}<a href="#{{ r | slug }}">{{ r }}</a>{% if not loop.last %} · {% endif %}{% endfor %}
+        </p>
+      </div>
+    </div>
+
+    {% for r in orderedRegions %}
+      {% set regionList = byRegion[r] %}
+      <div class="country-group" id="{{ r | slug }}">
+        <h3 class="country-group__title">{{ r }}</h3>
+        {% set byCountry = regionList | groupby("country") %}
+        {% for country, items in byCountry %}
+          <div class="country-group" id="{{ country | slug }}">
+            <h4 class="country-group__title">{{ country }}</h4>
+            <ul class="partner-list">
+              {% for p in items %}
+                <li class="partner {% if p.status == 'past' %}partner--past{% endif %}" id="partner-{{ p.name | slug }}">
+                  <div class="partner__where"><strong>{{ p.city }}</strong>{{ p.country }}</div>
+                  <div>
+                    <h5 class="partner__name">
+                      {% if p.url and p.url.startsWith("http") %}
+                        <a href="{{ p.url }}" rel="noopener external">{{ p.name }}</a>
+                      {% elif p.url %}
+                        <a href="{{ p.url }}">{{ p.name }}</a>
+                      {% else %}
+                        {{ p.name }}
+                      {% endif %}
+                    </h5>
+                    {% if p.description %}<p class="partner__desc">{{ p.description }}</p>{% endif %}
+                    <div class="partner__meta">
+                      <span>{{ p.type }}</span>
+                      {% if p.since %}<span aria-hidden="true">·</span><span>Since {{ p.since }}</span>{% endif %}
+                      {% if (p.programs and p.programs.length) or p.status == 'past' %}
+                        <span aria-hidden="true">·</span>
+                        <ul class="tag-list" aria-label="Programs">
+                          {% if p.status == 'past' %}<li class="tag">Past partnership</li>{% endif %}
+                          {% for prog in p.programs %}<li class="tag tag--initiative">{{ prog }}</li>{% endfor %}
+                        </ul>
+                      {% endif %}
+                    </div>
+                  </div>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+        {% endfor %}
+      </div>
+    {% endfor %}
+  </div>
+</section>
+
+{# ---------- Partner with us ---------- #}
+<section class="section section--sand" id="partner-with-us" aria-labelledby="partner-with-us-title">
+  <div class="container split">
+    <div class="flow">
+      <p class="eyebrow">Partner with us</p>
+      <h2 class="mt-0" id="partner-with-us-title">Propose a collaboration</h2>
+      <p>We welcome inquiries from universities, community agencies, foundations, research institutes and international organizations interested in working with the Steve Hicks School of Social Work. Partnerships typically take one or more of three forms: hosting or co-teaching students through global practicums and faculty-led courses, collaborating with faculty on research and scholar exchange, or co-designing service projects with communities.</p>
+      <p>Partner with us to transform lives globally through research, education and practice.</p>
+    </div>
+    <div class="flow">
+      <ol class="steps">
+        <li>
+          <h3>Get in touch</h3>
+          <p>Email Associate Dean Noël Busch-Armendariz at <a href="mailto:nbusch@austin.utexas.edu">nbusch@austin.utexas.edu</a> with a short description of your institution and the collaboration you have in mind.</p>
+        </li>
+        <li>
+          <h3>Explore the fit</h3>
+          <p>We will connect you with the faculty liaison or research team whose work aligns with yours and discuss what students, faculty and communities would gain.</p>
+        </li>
+        <li>
+          <h3>Formalize the partnership</h3>
+          <p>OGE coordinates partnership agreements with the School and Texas Global so that your collaboration becomes part of the School's global record.</p>
+        </li>
+      </ol>
+      <div class="btn-row mt-0">
+        <a class="btn btn--primary" href="/connect/">Contact the office</a>
+        <a class="btn btn--outline" href="/research/">Explore our research</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% include "components/cta-band.njk" %}

@@ -1,0 +1,118 @@
+---
+layout: layouts/base.njk
+title: Join Our Listserv
+eyebrow: Stay connected
+lede: Hear about global practicum information sessions, application deadlines, visiting scholar lectures and new Global Stories first. A few emails a month, never more than you need.
+description: "Join the Office of Global Engagement listserv for practicum information sessions, deadlines, visiting scholar lectures, showcases and new Global Stories."
+permalink: /connect/listserv/
+breadcrumbs:
+  - { label: "Connect", url: "/connect/" }
+---
+{% include "components/page-hero.njk" %}
+
+<div class="container layout-sidebar">
+  <div>
+    <div class="flow mb-6">
+      <h2 id="what-you-get">What you'll receive</h2>
+      <ul class="feature-list feature-list--2">
+        <li><strong>Information sessions</strong> for the Global Practicum, May Term in London and Washington, D.C., and From Texas to the Troubles.</li>
+        <li><strong>Application deadlines</strong> and reminders for practicum placements and Projects with Underserved Communities.</li>
+        <li><strong>Visiting scholar lectures</strong> and public events with partner universities and organizations.</li>
+        <li><strong>Showcases</strong> where returning students present what they learned with communities abroad.</li>
+        <li><strong>New Global Stories</strong> from students, faculty, alumni and partners around the world.</li>
+        <li><strong>Ways to get involved</strong> as a faculty member, alum, donor or partner institution.</li>
+      </ul>
+      <h2 id="sign-up">Sign up</h2>
+      <p>Everyone is welcome: students, faculty, staff, alumni, partners and friends of the School. Tell us a little about yourself so we can send the updates that matter most to you.</p>
+    </div>
+
+    <form class="form" data-form data-form-success="You're on the list. Watch for a confirmation email." novalidate aria-labelledby="sign-up">
+      <div class="form__row form__row--2">
+        <div class="field">
+          <label for="l-first">First name</label>
+          <input id="l-first" name="first_name" type="text" autocomplete="given-name">
+        </div>
+        <div class="field">
+          <label for="l-last">Last name</label>
+          <input id="l-last" name="last_name" type="text" autocomplete="family-name">
+        </div>
+      </div>
+      <div class="form__row form__row--2">
+        <div class="field">
+          <label for="l-email">Email <span aria-hidden="true">*</span></label>
+          <input id="l-email" name="email" type="email" required autocomplete="email" inputmode="email">
+        </div>
+        <div class="field">
+          <label for="l-affiliation">Affiliation</label>
+          <select id="l-affiliation" name="affiliation">
+            <option value="">Select one</option>
+            <option>Prospective student</option>
+            <option>Current BSW student</option>
+            <option>Current MSSW student</option>
+            <option>Current doctoral student</option>
+            <option>Faculty or staff</option>
+            <option>Alumni</option>
+            <option>Donor or supporter</option>
+            <option>Partner institution or organization</option>
+            <option>Other</option>
+          </select>
+        </div>
+      </div>
+      <fieldset class="fieldset">
+        <legend>I'm interested in</legend>
+        <label class="check"><input type="checkbox" name="interests" value="Student opportunities"><span>Student opportunities (practicums, courses, funding)</span></label>
+        <label class="check"><input type="checkbox" name="interests" value="Research and faculty exchange"><span>Research &amp; faculty exchange</span></label>
+        <label class="check"><input type="checkbox" name="interests" value="Events"><span>Events (lectures, showcases, information sessions)</span></label>
+        <label class="check"><input type="checkbox" name="interests" value="Giving and partnership"><span>Giving &amp; partnership</span></label>
+      </fieldset>
+      <div class="visually-hidden" aria-hidden="true">
+        <label for="l-website">Leave this field empty</label>
+        <input id="l-website" name="website" type="text" tabindex="-1" autocomplete="off">
+      </div>
+      <div class="form__status" data-form-status hidden tabindex="-1"></div>
+      <div>
+        <button class="btn btn--primary" type="submit">Join the listserv</button>
+      </div>
+      <p class="form__note">Required fields are marked with an asterisk. In production this form connects to the School's UT Lists / email platform and sends a confirmation message; this local build only simulates a sign-up. You can unsubscribe from any message.</p>
+      <!-- VERIFY: which email platform (UT Lists or other) will power the listserv, and the sending frequency promised in the sidebar. -->
+    </form>
+  </div>
+
+  <aside class="rail" aria-label="About the listserv">
+    <div class="rail-block">
+      <h2 class="rail-heading">How often</h2>
+      <p class="small">A few times a month. We send more during application season (fall) and before major events, and less over the summer.</p>
+    </div>
+    <div class="rail-block">
+      <h2 class="rail-heading">Who it's for</h2>
+      <ul class="rail-links">
+        <li>Prospective and current students</li>
+        <li>Faculty and staff</li>
+        <li>Alumni</li>
+        <li>Donors and supporters</li>
+        <li>Partner institutions</li>
+      </ul>
+    </div>
+    <div class="rail-block">
+      <h2 class="rail-heading">Privacy</h2>
+      <p class="small">We use your name and email only to send OGE updates. We do not sell or share the list, and every message includes an unsubscribe link. See <a href="https://it.utexas.edu/policies/web-privacy/">UT Austin's web privacy policy</a>.</p>
+    </div>
+    <div class="rail-block">
+      <h2 class="rail-heading">Also available</h2>
+      <ul class="rail-links">
+        <li><a href="/stories/feed.xml">Global Stories RSS feed</a></li>
+        <li><a href="/events/">Events calendar</a></li>
+        <li><a href="/connect/">Contact the office</a></li>
+      </ul>
+    </div>
+  </aside>
+</div>
+
+{% set cta = {
+  heading: "While you wait for the next update",
+  text: "Browse the programs students can apply for this year and see what's coming up on the calendar.",
+  primary: { label: "Explore student opportunities", url: "/education/student-opportunities/" },
+  secondary: { label: "See upcoming events", url: "/events/" },
+  theme: "blue"
+} %}
+{% include "components/cta-band.njk" %}

@@ -1,0 +1,68 @@
+{
+  "_note": "Faculty research profiles with a global focus. Medium-term: replace with an automated pull from the School's research database using a 'global' tag (see README → Roadmap). VERIFY: docs/CONTENT-SOURCES.md gives no titles for DiNitto (listed here as Cullen Trust Centennial Professor Emerita), Phillips (Research Assistant Professor), Kellison (Bureau of Business Research / IC² / IDVSA) or Martinez (Associate Professor of History); confirm each before launch.",
+  "faculty": [
+    {
+      "name": "Noël Busch-Armendariz, Ph.D., LMSW, MPA",
+      "title": "University Presidential Professor; Associate Dean for Global Engagement",
+      "url": "https://socialwork.utexas.edu/directory/noel-busch-armendariz/",
+      "initials": "NB",
+      "regions": ["Northern Ireland", "Ireland", "Global"],
+      "topics": ["Peace and reconciliation", "Gender-based violence", "Human trafficking", "Restorative justice"],
+      "summary": "Leads \"Leading with Peace: Lessons from Northern Ireland,\" a President's Award for Global Learning project with Corrymeela examining how conflict spreads, what it costs and how peacemaking and restorative justice shape future leaders. Directs the Institute on Domestic Violence & Sexual Assault."
+    },
+    {
+      "name": "Rubén Parra-Cardona, Ph.D.",
+      "title": "Professor; Founding Associate Dean for Global Engagement (2023–2024)",
+      "url": "https://socialwork.utexas.edu/directory/ruben-parra-cardona/",
+      "initials": "RP",
+      "regions": ["Chile", "Puerto Rico", "Mexico"],
+      "topics": ["Parenting interventions", "Cultural adaptation", "Latino mental health", "Research capacity building"],
+      "summary": "Partners with Fundación San Carlos de Maipo on the cultural adaptation and large-scale dissemination of a parenting intervention in Chile, co-teaches in the PUC-Chile clinical master's program and leads Cortando la Brecha, a grant-writing and mentoring initiative for Puerto Rican scholars."
+    },
+    {
+      "name": "Diana DiNitto, Ph.D.",
+      "title": "Cullen Trust Centennial Professor Emerita in Alcohol Studies and Education",
+      "url": "https://socialwork.utexas.edu/directory/diana-dinitto/",
+      "initials": "DD",
+      "regions": ["Estonia"],
+      "topics": ["Social welfare policy", "Substance use", "Doctoral education"],
+      "summary": "Has taught in Tallinn University's social work doctoral program since 2014 across six visits. A dissertation she co-supervised won a national award from the Estonian Research Council, the first ever for a social work student."
+    },
+    {
+      "name": "Farya Phillips, Ph.D.",
+      "title": "Research Assistant Professor",
+      "url": "https://socialwork.utexas.edu/directory/farya-phillips/",
+      "initials": "FP",
+      "regions": ["India"],
+      "topics": ["Community-engaged evaluation", "Child and family well-being", "Service learning"],
+      "summary": "Led the Projects with Underserved Communities team in Tamil Nadu that evaluated a children's library serving 3,000 residents and a housing project for a nomadic community, producing community engagement protocols, a documentary and a book of community stories."
+    },
+    {
+      "name": "Tanya Voss, LCSW",
+      "title": "Clinical Professor; Assistant Dean for Global Engagement",
+      "url": "https://socialwork.utexas.edu/directory/tanya-voss/",
+      "initials": "TV",
+      "regions": ["United Kingdom", "Global"],
+      "topics": ["International practicum education", "Welfare state comparison", "Service learning pedagogy"],
+      "summary": "Studies and teaches comparative social welfare through the May Term in London and the Global Practicum Seminar, and advises the Projects with Underserved Communities course sequence."
+    },
+    {
+      "name": "Bruce Kellison, Ph.D.",
+      "title": "Director, Bureau of Business Research, IC² Institute; Co-Director, IDVSA",
+      "url": "https://ic2.utexas.edu/",
+      "initials": "BK",
+      "regions": ["Northern Ireland"],
+      "topics": ["Economics of conflict", "Human trafficking economics"],
+      "summary": "Co-leads the Northern Ireland reconciliation program, bringing an economic lens to the costs of conflict and the dividends of peace."
+    },
+    {
+      "name": "Monica Martinez, Ph.D.",
+      "title": "Associate Professor, Department of History",
+      "url": "https://liberalarts.utexas.edu/history/",
+      "initials": "MM",
+      "regions": ["Northern Ireland", "Texas"],
+      "topics": ["Historical memory", "Border violence", "Public history"],
+      "summary": "Co-leads the Northern Ireland program and contributes to TIES, connecting histories of violence and reconciliation in Northern Ireland and the Texas–Mexico border."
+    }
+  ]
+}

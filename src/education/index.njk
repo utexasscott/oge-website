@@ -1,0 +1,182 @@
+---
+layout: layouts/base.njk
+title: Education Abroad
+description: "Complete your final MSSW practicum abroad, study peace and leadership in Northern Ireland, serve through PUC or earn credit in London or Washington, D.C."
+eyebrow: Education
+lede: "Leave to Learn. Return to Lead. The Steve Hicks School of Social Work has placed students around the world since 1993. Immersive global education builds the cross-cultural competence social workers need and opens doors to careers at home and abroad."
+hero:
+  image: /assets/img/students-oaxaca.jpg
+  alt: "A bright green tiled passageway beneath an archway in Oaxaca, Mexico, one of the School's global practicum sites"
+  size: tall
+permalink: /education/
+---
+{% include "components/page-hero.njk" %}
+
+{# ---------- Philosophy ---------- #}
+<section class="section" aria-labelledby="philosophy-title">
+  <div class="container">
+    <div class="split">
+      <div class="flow">
+        <p class="eyebrow">Our philosophy</p>
+        <h2 class="section__title" id="philosophy-title">Leave to Learn. Return to Lead.</h2>
+        <p class="lede">Global experience enriches your social work practice and expands your career opportunities. Our international partnerships provide unique learning environments to understand social issues in diverse cultural contexts.</p>
+        <p>Social work looks different in a Santiago hospital, an Oaxaca feminist collective, a Wellington counseling center, a Cape Town child welfare agency or a UNHCR desk in Geneva. Learning alongside practitioners in those settings teaches what no classroom can: how culture shapes need, how communities organize their own solutions and how to practice with humility when you are the outsider.</p>
+        <p>That is why the School has placed students internationally since 1993, when the first interns joined UNHCR in Geneva. In the decades since, students have been placed on every continent except Antarctica and faculty-led internships for MSSW students have run in 20 countries. Global engagement has been part of the School's signature education landscape for more than 20 years.</p>
+        <ul class="feature-list">
+          <li><strong>Cross-cultural competence.</strong> Develop the cross-cultural competence essential for today's interconnected world, whether your career takes you overseas or to a Texas community that is global in its own right.</li>
+          <li><strong>Career outcomes.</strong> Immersive practicum experience with international agencies, from grassroots organizations to a United Nations body, sets graduates apart in clinical, policy and leadership roles.</li>
+          <li><strong>Learning from practitioners worldwide.</strong> Every program pairs students with experienced social workers and community leaders who teach from their own context, not ours.</li>
+        </ul>
+      </div>
+      <figure class="split__media">
+        <blockquote class="pullquote">When a member of our social work community engages globally, we believe they leave to learn and return to lead.</blockquote>
+        <figcaption class="pullquote-cite">Noël Busch-Armendariz, Ph.D., Associate Dean for Global Engagement</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+{# ---------- Programs ---------- #}
+<section class="section section--sand" aria-labelledby="programs-title">
+  <div class="container">
+    <div class="section__head">
+      <div>
+        <p class="eyebrow">Programs</p>
+        <h2 class="section__title" id="programs-title">Five ways to study the world</h2>
+        <p class="section__intro">From a semester-long practicum abroad to a May Term course, every program is built around learning from practitioners and communities on their own ground.</p>
+      </div>
+      <a class="section__more" href="/education/student-opportunities/">Student opportunities</a>
+    </div>
+    {% if collections.programs_education and collections.programs_education.length %}
+      <div class="card-grid card-grid--3">
+        {% for program in collections.programs_education %}{% include "components/program-card.njk" %}{% endfor %}
+      </div>
+    {% else %}
+      <div class="prose">
+        <ul>
+          <li><a href="/education/practicum/">Global Practicum</a>: final MSSW practicum in Santiago, Oaxaca, Wellington, Cape Town or with UNHCR in Geneva and Budapest.</li>
+          <li><a href="/education/from-texas-to-the-troubles/">From Texas to the Troubles</a>: OGE's signature program on constructive dialogue and leadership in divided societies, in Austin, Dublin and Belfast.</li>
+          <li><a href="/education/projects-with-underserved-communities/">Projects with Underserved Communities</a>: a yearlong service-learning sequence for undergraduate social work and engineering students.</li>
+          <li><a href="/education/may-term/">May Term Courses</a>: London and Washington, D.C.</li>
+          <li><a href="/education/certificate/">Global Social Work Certificate</a>: a proposed pathway, in development.</li>
+        </ul>
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+{# ---------- Comparison table ---------- #}
+<section class="section" aria-labelledby="compare-title">
+  <div class="container">
+    <div class="section__head">
+      <div>
+        <p class="eyebrow">Compare</p>
+        <h2 class="section__title" id="compare-title">Which path is right for you?</h2>
+        <p class="section__intro">Programs differ in who they serve, when they run and what they require. Use this overview to narrow your options, then talk with a faculty liaison.</p>
+      </div>
+    </div>
+    <div class="prose">
+      <div class="table-wrap"><table>
+        <thead>
+          <tr>
+            <th scope="col">Program</th>
+            <th scope="col">Who</th>
+            <th scope="col">When</th>
+            <th scope="col">Length</th>
+            <th scope="col">Credit</th>
+            <th scope="col">Language</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row"><a href="/education/practicum/">Global Practicum</a></th>
+            <td>MSSW students in their final (advanced) practicum, Clinical or Administrative and Policy Practice</td>
+            <td>Spring semester</td>
+            <td>Full semester</td>
+            <td>Advanced practicum credit, with the Global Practicum Seminar</td>
+            <td>Fluent Spanish required for clinical placements in Santiago and Oaxaca; no language requirement listed for Wellington, Cape Town or UNHCR</td>
+          </tr>
+          <tr>
+            <th scope="row"><a href="/education/from-texas-to-the-troubles/">From Texas to the Troubles</a></th>
+            <td>Students, faculty and staff; open across majors</td>
+            <td>Summer (launched summer 2026)</td>
+            <td>Short-term study in Austin, Dublin and Belfast <!-- VERIFY: exact duration --></td>
+            <td>International course credit <!-- VERIFY: course number and credit hours --></td>
+            <td>English</td>
+          </tr>
+          <tr>
+            <th scope="row"><a href="/education/projects-with-underserved-communities/">Projects with Underserved Communities</a></th>
+            <td>Undergraduate social work and engineering students</td>
+            <td>Fall and spring courses, then May Term; travel the following summer</td>
+            <td>One academic year plus travel</td>
+            <td>ES 277K, ES 277L and ES 177L</td>
+            <td>English; project sites span 12 countries</td>
+          </tr>
+          <tr>
+            <th scope="row"><a href="/education/may-term/">May Term Courses</a></th>
+            <td>Undergraduate and graduate students (Washington, D.C. is open to both; London is S W 360K / S W 495K)</td>
+            <td>May Term, after the spring semester</td>
+            <td>Historically a four-week course with spring seminar sessions</td>
+            <td>S W 360K / S W 495K (London); D.C. course credit <!-- VERIFY: D.C. course number --></td>
+            <td>English</td>
+          </tr>
+          <tr>
+            <th scope="row"><a href="/education/certificate/">Global Social Work Certificate</a></th>
+            <td>Proposed pathway for graduate students <!-- VERIFY: certificate eligibility --></td>
+            <td>Across the degree</td>
+            <td>Portfolio of coursework and a global experience <!-- VERIFY: certificate requirements --></td>
+            <td>In development</td>
+            <td>Varies by experience</td>
+          </tr>
+        </tbody>
+      </table></div>
+      <p class="notice notice--warn"><strong>Draft content.</strong> Details for From Texas to the Troubles, the Washington, D.C. May Term course and the Global Social Work Certificate are still being finalized by OGE. Confirm length, credit and eligibility with the office before applying.</p>
+      <p class="small muted">Costs, fees and deadlines change each cycle. Priority deadline: see the current application for each program.</p>
+    </div>
+  </div>
+</section>
+
+{# ---------- How OGE supports you ---------- #}
+<section class="section section--sand" aria-labelledby="support-title">
+  <div class="container">
+    <div class="section__head">
+      <div>
+        <p class="eyebrow">Support</p>
+        <h2 class="section__title" id="support-title">How OGE supports you</h2>
+        <p class="section__intro">You do not go alone. The Office of Global Engagement works with faculty, the School's practicum office and Texas Global so that every student is prepared, placed and supported from first conversation to return.</p>
+      </div>
+    </div>
+    <ul class="feature-list feature-list--2">
+      <li><strong>Advising.</strong> Talk with OGE staff early about which program fits your degree plan, interests and timeline. We help you weigh options before you commit.</li>
+      <li><strong>Faculty liaisons.</strong> Each global practicum site has a designated faculty liaison who knows the agencies, the city and the work: Anita Guajardo (Santiago and Oaxaca), Starla Simmons (Wellington), Tammy Linseisen (Cape Town) and Assistant Dean Stacey Jordan (UNHCR). Have questions about a specific agency or program? Reach out to the liaison associated with it.</li>
+      <li><strong>Global Practicum Seminar.</strong> International interns take the Global Practicum Seminar, taught by Assistant Dean Tanya Voss, to connect their placement to social work theory and to one another across time zones.</li>
+      <li><strong>Coordination with the Office of Practicum Education and Texas Global.</strong> OGE coordinates with the School's Office of Practicum Education and UT's Texas Global to offer advanced Clinical and APP practicums each spring, so your placement meets degree requirements and university travel standards.</li>
+      <li><strong>Pre-departure preparation.</strong> Information sessions, application guidance and pre-departure preparation cover logistics, expectations and cultural orientation before you leave.</li>
+      <li><strong>A community when you return.</strong> Returning students share their experience through Global Stories and campus showcases, and help the next cohort decide to go.</li>
+    </ul>
+  </div>
+</section>
+
+{# ---------- Student stories ---------- #}
+{% set studentStories = collections.publishedStories | where("audiences", "Student Experience") | limit(3) %}
+<section class="section" aria-labelledby="stories-title">
+  <div class="container">
+    <div class="section__head">
+      <div>
+        <p class="eyebrow">Global Stories</p>
+        <h2 class="section__title" id="stories-title">Stories from students</h2>
+        <p class="section__intro">What it is actually like to learn social work in another country, in students' own words.</p>
+      </div>
+      <a class="section__more" href="/stories/">All stories</a>
+    </div>
+    {% if studentStories and studentStories.length %}
+      <div class="card-grid card-grid--3">
+        {% for story in studentStories %}{% include "components/story-card.njk" %}{% endfor %}
+      </div>
+    {% else %}
+      <p class="empty-state">Student stories are on their way. Browse the <a href="/stories/">Global Stories archive</a> or <a href="/connect/">share your own</a>.</p>
+    {% endif %}
+  </div>
+</section>
+
+{% include "components/cta-band.njk" %}

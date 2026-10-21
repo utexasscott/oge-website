@@ -1,0 +1,31 @@
+{# Expects `story` (an Eleventy collection item) and optional `variant` ("featured" | "compact") #}
+{% set s = story.data %}
+<article class="story-card {% if variant %}story-card--{{ variant }}{% endif %}"
+  data-story
+  data-regions="{{ s.regions | join('|') }}"
+  data-initiatives="{{ s.initiatives | join('|') }}"
+  data-audiences="{{ s.audiences | join('|') }}"
+  data-year="{{ story.date | year }}">
+  <a class="story-card__media" href="{{ story.url }}" tabindex="-1" aria-hidden="true">
+    {% if s.image %}
+      <img src="{{ s.image }}" alt="" loading="lazy">
+    {% else %}
+      <span class="story-card__placeholder story-card__placeholder--{{ s.tone or 'orange' }}"></span>
+    {% endif %}
+  </a>
+  <div class="story-card__body">
+    <p class="story-card__meta">
+      {% if s.draft %}<span class="badge badge--draft">Draft</span>{% endif %}
+      <time datetime="{{ story.date | isoDate }}">{{ story.date | date }}</time>
+      {% if s.regions and s.regions.length %}<span class="story-card__region">{{ s.regions | limit(2) | join(" · ") }}</span>{% endif %}
+    </p>
+    <h3 class="story-card__title"><a href="{{ story.url }}">{{ s.title }}</a></h3>
+    {% if variant != "compact" %}<p class="story-card__summary">{{ s.summary }}</p>{% endif %}
+    {% if s.audiences and s.audiences.length %}
+      <ul class="tag-list" aria-label="Tags">
+        {% for t in s.audiences | limit(2) %}<li class="tag">{{ t }}</li>{% endfor %}
+        {% for t in s.initiatives | limit(1) %}<li class="tag tag--initiative">{{ t }}</li>{% endfor %}
+      </ul>
+    {% endif %}
+  </div>
+</article>

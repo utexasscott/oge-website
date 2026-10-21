@@ -1,0 +1,148 @@
+---
+layout: layouts/base.njk
+title: Connect with OGE
+eyebrow: Contact us
+lede: Whether you are a student weighing a practicum abroad, a faculty member with a research partner in mind, an alum with a story to share or a partner institution, we would like to hear from you.
+description: "Contact the Office of Global Engagement at UT Social Work about global practicums, From Texas to the Troubles, research collaboration, giving and media."
+permalink: /connect/
+---
+{% include "components/page-hero.njk" %}
+
+<div class="container layout-sidebar">
+  <div>
+    <div class="flow mb-6">
+      <h2 id="send-a-message">Send us a message</h2>
+      <p>Tell us a little about who you are and what you are looking for, and we will route your message to the right member of the team.</p>
+    </div>
+
+    <!-- VERIFY: the two-business-day reply commitment below is a placeholder service level; confirm with OGE. -->
+    <form class="form" data-form data-form-success="We'll route your message to the right member of the team and reply within two business days." novalidate aria-labelledby="send-a-message">
+      <div class="form__row form__row--2">
+        <div class="field">
+          <label for="c-name">Name <span aria-hidden="true">*</span></label>
+          <input id="c-name" name="name" type="text" required autocomplete="name">
+        </div>
+        <div class="field">
+          <label for="c-email">Email <span aria-hidden="true">*</span></label>
+          <input id="c-email" name="email" type="email" required autocomplete="email" inputmode="email">
+          <p class="hint">We reply from a utexas.edu address.</p>
+        </div>
+      </div>
+      <div class="form__row form__row--2">
+        <div class="field">
+          <label for="c-role">I am a…</label>
+          <select id="c-role" name="role">
+            <option value="">Select one</option>
+            <option>Prospective student</option>
+            <option>Current student</option>
+            <option>Faculty or staff</option>
+            <option>Alumni</option>
+            <option>Donor or supporter</option>
+            <option>Partner institution</option>
+            <option>Media</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="c-topic">Topic</label>
+          <select id="c-topic" name="topic">
+            <option value="">Select one</option>
+            <option>Global practicum</option>
+            <option>From Texas to the Troubles</option>
+            <option>Projects with Underserved Communities (PUC)</option>
+            <option>May Term</option>
+            <option>Research collaboration</option>
+            <option>Giving</option>
+            <option>Media request</option>
+            <option>Other</option>
+          </select>
+        </div>
+      </div>
+      <div class="field">
+        <label for="c-message">Message <span aria-hidden="true">*</span></label>
+        <textarea id="c-message" name="message" required rows="6"></textarea>
+        <p class="hint">If you are asking about a specific practicum site, mention the city so we can loop in the faculty liaison.</p>
+      </div>
+      <fieldset class="fieldset">
+        <legend class="visually-hidden">Stay in touch</legend>
+        <label class="check">
+          <input type="checkbox" name="listserv" value="yes">
+          <span>Add me to the OGE listserv for information sessions, deadlines, lectures and new Global Stories (a few times a month; unsubscribe any time).</span>
+        </label>
+      </fieldset>
+      <div class="visually-hidden" aria-hidden="true">
+        <label for="c-website">Leave this field empty</label>
+        <input id="c-website" name="website" type="text" tabindex="-1" autocomplete="off">
+      </div>
+      <div class="form__status" data-form-status hidden tabindex="-1"></div>
+      <div>
+        <button class="btn btn--primary" type="submit">Send message</button>
+      </div>
+      <p class="form__note">Required fields are marked with an asterisk. On the production site this form will be powered by the School's WordPress form plugin and will deliver to the OGE inbox; this local build only simulates a submission. Prefer email? Write to <a href="mailto:{{ site.email }}">{{ site.email }}</a>. <!-- VERIFY: shared office email address is a placeholder. --></p>
+    </form>
+  </div>
+
+  <aside class="rail" aria-label="Contact details and quick links">
+    {% set card = {
+      heading: "Office",
+      name: site.name,
+      title: site.parent + ", " + site.university,
+      email: site.email,
+      phone: site.phone,
+      note: (site.physicalAddress | join(", ")) + ". Mailing address: " + (site.mailingAddress | join(", ")) + "."
+    } %}
+    {% include "components/contact-card.njk" %}
+    <!-- VERIFY: globalengagement@socialwork.utexas.edu is a placeholder shared inbox. -->
+    <div class="rail-block">
+      <h2 class="rail-heading">Quick links</h2>
+      <ul class="rail-links">
+        <li><a href="/connect/listserv/">Join our listserv</a></li>
+        <li><a href="/connect/media/">Media requests</a></li>
+        <li><a href="/resources/international-students/">International student resources</a></li>
+        <li><a href="/give/">Support global engagement</a></li>
+        <li><a href="/about/partners/#partner-with-us">Partner with us</a></li>
+        <li><a href="https://socialwork.utexas.edu/directory/">School directory</a></li>
+      </ul>
+    </div>
+  </aside>
+</div>
+
+{# ---------- Who to contact ---------- #}
+{% set voss = team.leadership | findBy("shortName", "Tanya Voss") %}
+{% set busch = team.leadership | findBy("shortName", "Noël Busch-Armendariz") %}
+{% set sulley = team.staff | findBy("shortName", "Caitlin Sulley") %}
+{% set routes = [
+  { person: voss, label: "Students and student programs", text: "Global Practicum placements, May Term courses, Projects with Underserved Communities and student funding questions." },
+  { person: busch, label: "Research and partnerships", text: "Global research collaborations, institutional partnerships, From Texas to the Troubles and the Northern Ireland program, visiting scholars." },
+  { person: sulley, label: "Operations, events and communications", text: "Partnership agreements, event logistics, communications, website content and Global Stories submissions." }
+] %}
+<section class="section section--sand" aria-labelledby="who-title">
+  <div class="container">
+    <div class="section__head">
+      <div>
+        <p class="eyebrow">Who to contact</p>
+        <h2 class="section__title" id="who-title">Reach the right person directly</h2>
+        <p class="section__intro">Not sure? Use the form above and we will route your message.</p>
+      </div>
+      <a class="section__more" href="/about/team/">Meet the full team</a>
+    </div>
+    <div class="people-grid people-grid--3">
+      {% for r in routes %}{% if r.person %}
+        <article class="person person--stack">
+          {% if r.person.photo %}<img class="person__photo" src="{{ r.person.photo }}" alt="" loading="lazy">{% else %}<span class="person__initials" aria-hidden="true">{{ r.person.initials }}</span>{% endif %}
+          <div>
+            <p class="eyebrow">{{ r.label }}</p>
+            <h3 class="person__name">{% if r.person.url %}<a href="{{ r.person.url }}">{{ r.person.name }}</a>{% else %}{{ r.person.name }}{% endif %}</h3>
+            <p class="person__title">{{ r.person.title }}</p>
+            {% if r.person.secondaryTitle %}<p class="person__subtitle">{{ r.person.secondaryTitle }}</p>{% endif %}
+            <p class="person__bio">{{ r.text }}</p>
+            {% if r.person.email %}<p class="person__contact"><a href="mailto:{{ r.person.email }}">{{ r.person.email }}</a></p>{% endif %}
+          </div>
+        </article>
+      {% endif %}{% endfor %}
+    </div>
+    <p class="small muted mt-6">Questions about a specific practicum agency? Contact the <a href="/education/practicum/">faculty liaison for that site</a>. Office phone: <a href="{{ site.phone | telHref }}">{{ site.phone }}</a>.</p>
+  </div>
+</section>
+
+{% include "components/cta-band.njk" %}

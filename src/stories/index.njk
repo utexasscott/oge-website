@@ -1,0 +1,83 @@
+---
+layout: layouts/base.njk
+title: Global Stories
+eyebrow: From the field
+lede: Student experiences, faculty research and partner spotlights from across the School's global community. Filter by region, initiative or audience, or browse everything.
+description: "Global Stories from the Office of Global Engagement: student practicum reflections, faculty research abroad, partner spotlights and alumni news worldwide."
+permalink: /stories/
+eleventyExcludeFromCollections: true
+---
+{% include "components/page-hero.njk" %}
+
+{% set stories = collections.publishedStories or [] %}
+{% set usedRegions = stories | flattenKey("regions") %}
+{% set usedInitiatives = stories | flattenKey("initiatives") %}
+{% set usedAudiences = stories | flattenKey("audiences") %}
+
+<section class="section section--tight" aria-labelledby="archive-title">
+  <div class="container">
+    <h2 class="visually-hidden" id="archive-title">All global stories</h2>
+
+    <form class="filters" data-story-filters aria-label="Filter stories">
+      <div class="field">
+        <label for="filter-region">Region</label>
+        <select id="filter-region" name="region">
+          <option value="">All regions</option>
+          {% for r in site.taxonomy.regions %}{% if r in usedRegions %}<option value="{{ r }}">{{ r }}</option>{% endif %}{% endfor %}
+        </select>
+      </div>
+      <div class="field">
+        <label for="filter-initiative">Initiative</label>
+        <select id="filter-initiative" name="initiative">
+          <option value="">All initiatives</option>
+          {% for i in site.taxonomy.initiatives %}{% if i in usedInitiatives %}<option value="{{ i }}">{{ i }}</option>{% endif %}{% endfor %}
+        </select>
+      </div>
+      <div class="field">
+        <label for="filter-audience">Audience</label>
+        <select id="filter-audience" name="audience">
+          <option value="">All audiences</option>
+          {% for a in site.taxonomy.audiences %}{% if a in usedAudiences %}<option value="{{ a }}">{{ a }}</option>{% endif %}{% endfor %}
+        </select>
+      </div>
+      <button type="button" class="btn btn--outline btn--sm filters__reset" data-filter-reset>Reset</button>
+      <button type="submit" class="visually-hidden">Apply filters</button>
+      <p class="filters__summary" data-filter-summary aria-live="polite"></p>
+    </form>
+
+    {% if stories.length %}
+      <div class="card-grid card-grid--3" data-story-grid>
+        {% for story in stories %}{% include "components/story-card.njk" %}{% endfor %}
+      </div>
+    {% endif %}
+
+    <div class="empty-state" data-filter-empty hidden>
+      <p><strong>No stories match those filters yet.</strong> Try a different combination, or reset the filters to see every story. New stories are added throughout the year.</p>
+    </div>
+
+    <p class="small muted mt-6">Prefer a feed reader? Subscribe to the <a href="/stories/feed.xml">Global Stories RSS feed</a> to get every new story as it is published. You can also <a href="/connect/listserv/">join our listserv</a> for a digest a few times a month.</p>
+  </div>
+</section>
+
+{% set drafts = collections.stories | where("draft", true) %}
+{% if drafts.length and not env.production %}
+<section class="section section--sand" aria-labelledby="drafts-title">
+  <div class="container">
+    <div class="section__head">
+      <div>
+        <p class="eyebrow">Local build only</p>
+        <h2 class="section__title" id="drafts-title">Draft stories pending review</h2>
+        <p class="section__intro">These drafts appear on this local build so OGE staff can review them before publication. They are excluded from the public archive above, the RSS feed and the homepage, and WordPress will keep them hidden until each one is published.</p>
+      </div>
+    </div>
+    <p class="notice notice--warn mb-6"><strong>Draft content.</strong> Names, dates and details in the stories below still need confirmation by the Office of Global Engagement. Look for <code>&lt;!-- VERIFY --&gt;</code> notes inside each draft.</p>
+    <div class="card-grid card-grid--4">
+      {% set variant = "compact" %}
+      {% for story in drafts %}{% include "components/story-card.njk" %}{% endfor %}
+      {% set variant = null %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+{% include "components/cta-band.njk" %}

@@ -1,0 +1,13 @@
+{# Expects `program` (collection item) #}
+{% set p = program.data %}
+<article class="program-card">
+  <a class="program-card__media" href="{{ program.url }}" tabindex="-1" aria-hidden="true">
+    {% if p.image %}<img src="{{ p.image }}" alt="" loading="lazy">{% else %}<span class="program-card__placeholder program-card__placeholder--{{ p.tone or 'blue' }}"></span>{% endif %}
+  </a>
+  <div class="program-card__body">
+    <p class="program-card__eyebrow">{{ p.eyebrow or p.type }}{% if p.regions and p.regions.length %} · {{ p.regions | limit(2) | join(", ") }}{% endif %}</p>
+    <h3 class="program-card__title"><a href="{{ program.url }}">{{ p.title }}</a></h3>
+    <p class="program-card__summary">{{ p.summary }}</p>
+    {% if p.audience %}<p class="program-card__audience"><strong>For:</strong> {{ p.audience }}</p>{% endif %}
+  </div>
+</article>

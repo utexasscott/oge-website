@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {%- set isStory = (layout == "layouts/story.njk") or (summary and page.url and page.url.startsWith("/stories/")) %}
+  {%- set metaDescription = description or summary or site.description %}
+  <title>{% if page.url == "/" %}{{ site.name }} | {{ site.parent }}{% elif isStory %}{{ shortTitle or title }} | {{ site.shortName or "OGE" }}{% elif title %}{{ title }} | {{ site.name }}{% else %}{{ site.name }} | {{ site.parent }}{% endif %}</title>
+  <meta name="description" content="{{ metaDescription }}">
+  <meta name="color-scheme" content="light">
+  <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+  <meta property="og:title" content="{{ title or site.name }}">
+  <meta property="og:description" content="{{ metaDescription }}">
+  <meta property="og:type" content="{% if isStory %}article{% else %}website{% endif %}">
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+  <meta property="og:image" content="{{ site.url }}{{ image or '/assets/img/students-oaxaca.jpg' }}">
+  <meta name="twitter:card" content="summary_large_image">
+  {%- if draft or env.preview %}
+  <meta name="robots" content="noindex">
+  {%- endif %}
+  <meta name="theme-color" content="#bf5700">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&display=swap">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="alternate" type="application/rss+xml" title="OGE Global Stories" href="/stories/feed.xml">
+</head>
+<body{% if bodyClass %} class="{{ bodyClass }}"{% endif %}>
+  <a class="skip-link" href="#main">Skip to main content</a>
+  {% include "components/header.njk" %}
+  <main id="main" tabindex="-1">
+    {{ content | safe }}
+  </main>
+  {% include "components/footer.njk" %}
+  <script src="/assets/js/main.js" defer></script>
+</body>
+</html>

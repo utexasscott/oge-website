@@ -1,0 +1,101 @@
+{
+  "_note": "Source: socialwork.utexas.edu/academics/office-of-global-engagement/ (Meet the Office) and school directory pages. Photos: add headshot paths to `photo` once high-resolution images are approved for web use. VERIFY: docs/CONTENT-SOURCES.md does not list credentials or full titles for the faculty liaisons; confirm LCSW (Guajardo, Simmons, Linseisen), Ph.D. (Jordan, Gulbas, Phillips, DiNitto), Stacey Jordan's exact title (source says only 'Asst. Dean') and every directory URL slug before launch.",
+  "leadership": [
+    {
+      "name": "Noël Busch-Armendariz, Ph.D., LMSW, MPA",
+      "shortName": "Noël Busch-Armendariz",
+      "title": "Associate Dean for Global Engagement",
+      "secondaryTitle": "University Presidential Professor; Director, Institute on Domestic Violence & Sexual Assault",
+      "email": "nbusch@austin.utexas.edu",
+      "url": "https://socialwork.utexas.edu/directory/noel-busch-armendariz/",
+      "photo": null,
+      "initials": "NB",
+      "bio": "Dr. Busch-Armendariz leads the Office of Global Engagement and brings more than 40 years of international experience, including work in Albania, Dubai, England, India, Ireland, Lebanon, Scotland and South Korea and service in the Peace Corps in Romania. She has taught and supervised social work students abroad, including in Ghana and Mexico, and leads the School's Northern Ireland reconciliation program in partnership with Corrymeela, honored with UT's President's Award for Global Learning. She was named associate dean in June 2024.",
+      "focus": ["Peace and reconciliation", "Gender-based violence and human trafficking", "Global partnerships"]
+    },
+    {
+      "name": "Tanya Voss, LCSW",
+      "shortName": "Tanya Voss",
+      "title": "Assistant Dean for Global Engagement",
+      "secondaryTitle": "Clinical Professor",
+      "email": "tvoss@austin.utexas.edu",
+      "url": "https://socialwork.utexas.edu/directory/tanya-voss/",
+      "photo": null,
+      "initials": "TV",
+      "bio": "Professor Voss became assistant dean for global engagement in August 2023 after leading the School's practicum (field) education program for 17 years. She teaches the Global Practicum Seminar for international interns, co-leads the May Term course in London with Lauren Gulbas and serves as faculty advisor to Projects with Underserved Communities. She oversees the School's global practicum placements.",
+      "focus": ["Global practicum education", "Student and faculty exchange", "Service learning"]
+    }
+  ],
+  "staff": [
+    {
+      "name": "Caitlin Sulley, LMSW",
+      "shortName": "Caitlin Sulley",
+      "title": "Director of Research Operations",
+      "secondaryTitle": "Office of Global Engagement; Institute on Domestic Violence & Sexual Assault",
+      "email": "csulley@austin.utexas.edu",
+      "url": "https://socialwork.utexas.edu/directory/caitlin-sulley/",
+      "photo": null,
+      "initials": "CS",
+      "bio": "Caitlin directs operations for the Office of Global Engagement, including research coordination, partnership agreements, communications and event planning. Her research and training background centers on multidisciplinary violence response and prevention and trauma-informed survivor engagement.",
+      "focus": ["Operations and partnerships", "Research coordination", "Communications"]
+    }
+  ],
+  "facultyLiaisons": [
+    {
+      "name": "Anita Guajardo, LCSW",
+      "shortName": "Anita Guajardo",
+      "title": "Faculty Liaison: Santiago, Chile, and Oaxaca, Mexico",
+      "url": "https://socialwork.utexas.edu/directory/anita-guajardo/",
+      "initials": "AG",
+      "programs": ["Global Practicum"]
+    },
+    {
+      "name": "Starla Simmons, LCSW",
+      "shortName": "Starla Simmons",
+      "title": "Faculty Liaison: Wellington, New Zealand",
+      "url": "https://socialwork.utexas.edu/directory/starla-simmons/",
+      "initials": "SS",
+      "programs": ["Global Practicum"]
+    },
+    {
+      "name": "Tammy Linseisen, LCSW",
+      "shortName": "Tammy Linseisen",
+      "title": "Faculty Liaison: Cape Town, South Africa",
+      "url": "https://socialwork.utexas.edu/directory/tammy-linseisen/",
+      "initials": "TL",
+      "programs": ["Global Practicum"]
+    },
+    {
+      "name": "Stacey Jordan, Ph.D.",
+      "shortName": "Stacey Jordan",
+      "title": "Assistant Dean for Practicum Education; Faculty Liaison: UNHCR (Geneva and Budapest)",
+      "url": "https://socialwork.utexas.edu/directory/stacey-e-jordan/",
+      "initials": "SJ",
+      "programs": ["Global Practicum", "UNHCR Partnership"]
+    },
+    {
+      "name": "Lauren Gulbas, Ph.D.",
+      "shortName": "Lauren Gulbas",
+      "title": "Faculty Lead: May Term in London",
+      "url": "https://socialwork.utexas.edu/directory/lauren-gulbas/",
+      "initials": "LG",
+      "programs": ["May Term"]
+    },
+    {
+      "name": "Farya Phillips, Ph.D.",
+      "shortName": "Farya Phillips",
+      "title": "Faculty: Projects with Underserved Communities (India)",
+      "url": "https://socialwork.utexas.edu/directory/farya-phillips/",
+      "initials": "FP",
+      "programs": ["Projects with Underserved Communities"]
+    },
+    {
+      "name": "Diana DiNitto, Ph.D.",
+      "shortName": "Diana DiNitto",
+      "title": "Faculty: Tallinn University doctoral program (Estonia)",
+      "url": "https://socialwork.utexas.edu/directory/diana-dinitto/",
+      "initials": "DD",
+      "programs": ["Faculty Exchange"]
+    }
+  ]
+}

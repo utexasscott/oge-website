@@ -1,0 +1,50 @@
+---
+layout: false
+permalink: /stories/feed.xml
+eleventyExcludeFromCollections: true
+eleventyImport:
+  collections: ["publishedStories"]
+---
+{#- Site URLs are built as site.url + path (not the `absoluteUrl` filter) because site.url carries a
+    subdirectory (/global) that root-relative paths would otherwise replace. -#}
+{%- set archiveUrl = site.url + "/stories/" -%}
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>{{ site.name }} — Global Stories</title>
+    <link>{{ archiveUrl }}</link>
+    <atom:link href="{{ site.url }}/stories/feed.xml" rel="self" type="application/rss+xml" />
+    <description>Student experiences, faculty research and partner spotlights from the {{ site.name }}, {{ site.parent }}, {{ site.university }}.</description>
+    <language>en-us</language>
+    <copyright>Copyright {{ buildYear }} {{ site.university }}</copyright>
+    <managingEditor>{{ site.email }} ({{ site.name }})</managingEditor>
+    <lastBuildDate>{{ collections.publishedStories | getNewestCollectionItemDate | rfc822Utc }}</lastBuildDate>
+    <generator>Eleventy</generator>
+    {%- for story in collections.publishedStories %}
+    {%- set absolutePostUrl = site.url + story.url %}
+    <item>
+      <title>{{ story.data.title }}</title>
+      <link>{{ absolutePostUrl }}</link>
+      <guid isPermaLink="true">{{ absolutePostUrl }}</guid>
+      <pubDate>{{ story.date | rfc822Utc }}</pubDate>
+      {%- if story.data.author %}
+      <dc:creator>{{ story.data.author }}</dc:creator>
+      {%- endif %}
+      {%- for r in story.data.regions %}
+      <category domain="{{ archiveUrl }}?region={{ r | slug }}">{{ r }}</category>
+      {%- endfor %}
+      {%- for i in story.data.initiatives %}
+      <category domain="{{ archiveUrl }}?initiative={{ i | slug }}">{{ i }}</category>
+      {%- endfor %}
+      {%- for a in story.data.audiences %}
+      <category domain="{{ archiveUrl }}?audience={{ a | slug }}">{{ a }}</category>
+      {%- endfor %}
+      <description>{% if story.data.summary %}{{ story.data.summary }}{% else %}{{ story.templateContent | excerpt(200) }}{% endif %}</description>
+      <content:encoded>{{ story.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}</content:encoded>
+      {%- if story.data.image %}
+      <enclosure url="{{ site.url }}{{ story.data.image }}" type="image/{% if story.data.image.endsWith('.png') %}png{% else %}jpeg{% endif %}" length="{{ story.data.image | fileSize }}" />
+      {%- endif %}
+    </item>
+    {%- endfor %}
+  </channel>
+</rss>

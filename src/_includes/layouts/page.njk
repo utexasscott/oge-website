@@ -1,0 +1,41 @@
+---
+layout: layouts/base.njk
+---
+{#
+  Standard interior page.
+  Front matter options:
+    title, description, eyebrow (small label above the title), lede (intro paragraph),
+    hero: { image, alt, size: "short"|"tall" }  — optional photo hero
+    breadcrumbs: [{label, url}]  — optional trail; the current page is appended automatically
+    sidebar: true — render content in a two-column layout with an "On this page" / contact rail
+    contact: { name, title, email, url } — optional contact card in the sidebar
+    cta: { heading, text, primary: {label,url}, secondary: {label,url}, theme } — closing band (default: audience CTA)
+#}
+{% include "components/page-hero.njk" %}
+<div class="container {% if sidebar %}layout-sidebar{% else %}layout-prose{% endif %}">
+  <article class="prose" id="content">
+    {{ content | safe }}
+  </article>
+  {% if sidebar %}
+    <aside class="rail" aria-label="Page sidebar">
+      {% if contact %}
+        {% set card = contact %}{% include "components/contact-card.njk" %}
+      {% endif %}
+      {% if related %}
+        <div class="rail-block">
+          <h2 class="rail-heading">Related</h2>
+          <ul class="rail-links">
+            {% for r in related %}<li><a href="{{ r.url }}">{{ r.label }}</a></li>{% endfor %}
+          </ul>
+        </div>
+      {% endif %}
+      <nav class="rail-block rail-toc" aria-label="On this page" data-toc hidden>
+        <h2 class="rail-heading">On this page</h2>
+        <ul class="rail-links" data-toc-list></ul>
+      </nav>
+    </aside>
+  {% endif %}
+</div>
+{% if cta !== false %}
+  {% include "components/cta-band.njk" %}
+{% endif %}

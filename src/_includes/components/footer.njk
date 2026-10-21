@@ -1,0 +1,46 @@
+<footer class="site-footer">
+  <div class="container site-footer__top">
+    <div class="site-footer__brand">
+      <a class="brand brand--footer" href="/">{% include "components/logo.njk" %}</a>
+      <p class="site-footer__tagline">{{ site.tagline }}</p>
+      <ul class="social" aria-label="Social media">
+        {% for s in site.social %}
+          <li><a href="{{ s.url }}" aria-label="{{ s.name }}" rel="noopener">{% include "components/icon-" + s.icon + ".njk" %}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% for col in site.footerColumns %}
+      <nav class="site-footer__col" aria-label="{{ col.heading }}">
+        <h2 class="site-footer__heading">{{ col.heading }}</h2>
+        <ul>
+          {% for l in col.links %}<li><a href="{{ l.url }}">{{ l.label }}</a></li>{% endfor %}
+        </ul>
+      </nav>
+    {% endfor %}
+    <div class="site-footer__col site-footer__contact">
+      <h2 class="site-footer__heading">Contact</h2>
+      <address>
+        <strong>{{ site.name }}</strong><br>
+        {{ site.parent }}<br>
+        {{ site.physicalAddress | join("<br>") | safe }}<br>
+        <a href="{{ site.phone | telHref }}">{{ site.phone }}</a><br>
+        <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+      </address>
+      <p class="site-footer__mail"><span>Mailing:</span> {{ site.mailingAddress | join(", ") }}</p>
+    </div>
+  </div>
+  <div class="site-footer__bottom">
+    <div class="container site-footer__bottom-inner">
+      <a class="site-footer__ut" href="https://www.utexas.edu/">
+        <img src="/assets/img/ut-social-work-logo.png" alt="The University of Texas at Austin School of Social Work" width="300" height="52" loading="lazy">
+      </a>
+      <ul class="site-footer__legal">
+        <li>&copy; {{ buildYear }} {{ site.university }}</li>
+        <li><a href="https://it.utexas.edu/policies/web-privacy/">Privacy</a></li>
+        <li><a href="https://it.utexas.edu/policies/web-accessibility">Web Accessibility</a></li>
+        <li><a href="https://provost.utexas.edu/the-office/academic-affairs/strategic-academic-initiatives/institutional-accreditation/">Accreditation</a></li>
+        <li><a href="https://emergency.utexas.edu/">Emergency Information</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>

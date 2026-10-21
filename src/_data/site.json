@@ -1,0 +1,132 @@
+{
+  "name": "Office of Global Engagement",
+  "shortName": "OGE",
+  "parent": "Steve Hicks School of Social Work",
+  "university": "The University of Texas at Austin",
+  "url": "https://socialwork.utexas.edu/global",
+  "description": "The Office of Global Engagement leads, supports and coordinates the Steve Hicks School of Social Work's global education, research and service worldwide.",
+  "tagline": "Global engagement that learns, serves, and discovers.",
+  "studentTagline": "Leave to Learn. Return to Lead.",
+  "serviceTagline": "Serve across borders. Strengthen communities.",
+  "parentUrl": "https://socialwork.utexas.edu/",
+  "email": "globalengagement@socialwork.utexas.edu",
+  "phone": "(512) 471-5457",
+  "physicalAddress": ["Walter Webb Hall", "405 W. 25th Street", "Austin, TX 78705"],
+  "mailingAddress": ["306 Inner Campus Drive, Ste. 2.200", "Stop D3500", "Austin, TX 78712"],
+  "social": [
+    { "name": "Instagram", "url": "https://www.instagram.com/utaustinsocialwork", "icon": "instagram" },
+    { "name": "LinkedIn", "url": "https://www.linkedin.com/company/utaustinsocialwork", "icon": "linkedin" },
+    { "name": "Facebook", "url": "https://www.facebook.com/utaustinsocialwork/", "icon": "facebook" },
+    { "name": "YouTube", "url": "https://www.youtube.com/@socialwork-utexas", "icon": "youtube" }
+  ],
+  "utilityLinks": [
+    { "label": "UT Social Work", "url": "https://socialwork.utexas.edu/" },
+    { "label": "Directory", "url": "https://socialwork.utexas.edu/directory/" },
+    { "label": "Texas Global", "url": "https://global.utexas.edu/" },
+    { "label": "Give", "url": "/give/" }
+  ],
+  "nav": [
+    {
+      "label": "About",
+      "url": "/about/",
+      "children": [
+        { "label": "Mission & Vision", "url": "/about/" },
+        { "label": "Leadership", "url": "/about/leadership/" },
+        { "label": "Our Team", "url": "/about/team/" },
+        { "label": "Partners", "url": "/about/partners/" }
+      ]
+    },
+    {
+      "label": "Education",
+      "url": "/education/",
+      "children": [
+        { "label": "Overview & Philosophy", "url": "/education/" },
+        { "label": "Student Opportunities", "url": "/education/student-opportunities/" },
+        { "label": "Global Practicum", "url": "/education/practicum/" },
+        { "label": "From Texas to the Troubles", "url": "/education/from-texas-to-the-troubles/" },
+        { "label": "Projects with Underserved Communities", "url": "/education/projects-with-underserved-communities/" },
+        { "label": "May Term Courses", "url": "/education/may-term/" },
+        { "label": "Global Social Work Certificate", "url": "/education/certificate/" }
+      ]
+    },
+    {
+      "label": "Research",
+      "url": "/research/",
+      "children": [
+        { "label": "Research Focus", "url": "/research/" },
+        { "label": "Northern Ireland", "url": "/research/northern-ireland/" },
+        { "label": "Chile", "url": "/research/chile/" },
+        { "label": "TIES", "url": "/research/ties/" },
+        { "label": "Faculty Research", "url": "/research/faculty/" }
+      ]
+    },
+    {
+      "label": "Service",
+      "url": "/service/",
+      "children": [
+        { "label": "Overview", "url": "/service/" },
+        { "label": "Projects with Underserved Communities", "url": "/education/projects-with-underserved-communities/" },
+        { "label": "TIES", "url": "/research/ties/" }
+      ]
+    },
+    { "label": "Stories", "url": "/stories/" },
+    { "label": "Events", "url": "/events/" },
+    {
+      "label": "Connect",
+      "url": "/connect/",
+      "children": [
+        { "label": "Contact Us", "url": "/connect/" },
+        { "label": "Join Our Listserv", "url": "/connect/listserv/" },
+        { "label": "Media Requests", "url": "/connect/media/" },
+        { "label": "International Student Resources", "url": "/resources/international-students/" },
+        { "label": "Support Global Engagement", "url": "/give/" }
+      ]
+    }
+  ],
+  "footerColumns": [
+    {
+      "heading": "Explore",
+      "links": [
+        { "label": "About OGE", "url": "/about/" },
+        { "label": "Education Abroad", "url": "/education/" },
+        { "label": "Global Research", "url": "/research/" },
+        { "label": "Global Service", "url": "/service/" },
+        { "label": "Global Stories", "url": "/stories/" },
+        { "label": "Events", "url": "/events/" }
+      ]
+    },
+    {
+      "heading": "For Students",
+      "links": [
+        { "label": "Student Opportunities", "url": "/education/student-opportunities/" },
+        { "label": "Global Practicum", "url": "/education/practicum/" },
+        { "label": "May Term Courses", "url": "/education/may-term/" },
+        { "label": "International Student Resources", "url": "/resources/international-students/" },
+        { "label": "How to Apply to UT Social Work", "url": "https://socialwork.utexas.edu/academics/how-to-apply/" }
+      ]
+    },
+    {
+      "heading": "Get Connected",
+      "links": [
+        { "label": "Contact Us", "url": "/connect/" },
+        { "label": "Join Our Listserv", "url": "/connect/listserv/" },
+        { "label": "Media Requests", "url": "/connect/media/" },
+        { "label": "Support Global Engagement", "url": "/give/" },
+        { "label": "Partner With Us", "url": "/about/partners/#partner-with-us" }
+      ]
+    }
+  ],
+  "taxonomy": {
+    "regions": [
+      "Chile", "Mexico", "Puerto Rico", "New Zealand", "South Africa", "Switzerland", "Hungary",
+      "Ireland", "Northern Ireland", "United Kingdom", "Estonia", "India", "Costa Rica", "Greece",
+      "Texas", "Washington, D.C.", "Global"
+    ],
+    "initiatives": [
+      "From Texas to the Troubles", "Global Practicum", "Projects with Underserved Communities",
+      "May Term", "Clinical Master's Collaboration", "Cortando la Brecha", "UNHCR Partnership",
+      "TIES", "Faculty Exchange", "Global Social Work Certificate"
+    ],
+    "audiences": ["Student Experience", "Faculty", "Alumni", "Partner", "Staff", "Donor Impact"]
+  }
+}

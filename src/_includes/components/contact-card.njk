@@ -1,0 +1,10 @@
+{# Expects `card` = { name, title, email, phone, url, photo, note } #}
+<div class="rail-block contact-card">
+  <h2 class="rail-heading">{{ card.heading or "Contact" }}</h2>
+  {% if card.photo %}<img class="contact-card__photo" src="{{ card.photo }}" alt="" width="72" height="72" loading="lazy">{% endif %}
+  <p class="contact-card__name">{% if card.url %}<a href="{{ card.url }}">{{ card.name }}</a>{% else %}{{ card.name }}{% endif %}</p>
+  {% if card.title %}<p class="contact-card__title">{{ card.title }}</p>{% endif %}
+  {% if card.email %}<p><a href="mailto:{{ card.email }}">{{ card.email }}</a></p>{% endif %}
+  {% if card.phone %}<p><a href="{{ card.phone | telHref }}">{{ card.phone }}</a></p>{% endif %}
+  {% if card.note %}<p class="contact-card__note">{{ card.note }}</p>{% endif %}
+</div>

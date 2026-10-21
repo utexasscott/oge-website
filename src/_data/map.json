@@ -1,0 +1,22 @@
+{
+  "_note": "Pin positions are in the 1010×666 map coordinate space. Mercator fit: x = (lon + 169.2) × 2.806; y = 462.7 − 159.7 × ln(tan(45° + lat/2)).",
+  "viewBox": [1010, 666],
+  "pins": [
+    { "id": "austin", "x": 200, "y": 374, "label": "Austin, Texas", "sub": "Home of the Office of Global Engagement", "url": "/about/", "home": true },
+    { "id": "santiago", "x": 276, "y": 562, "label": "Santiago, Chile", "sub": "Global practicum · Clinical master's collaboration · Parenting research", "url": "/research/chile/" },
+    { "id": "oaxaca", "x": 203, "y": 414, "label": "Oaxaca, Mexico", "sub": "Global practicum", "url": "/education/practicum/#oaxaca" },
+    { "id": "san-juan", "x": 289, "y": 410, "label": "Puerto Rico", "sub": "Cortando la Brecha · Ponce Medical School research", "url": "/about/partners/#puerto-rico" },
+    { "id": "washington", "x": 259, "y": 345, "label": "Washington, D.C.", "sub": "May Term: Social Work Leadership for the Public Good", "url": "/education/may-term/" },
+    { "id": "san-jose", "x": 239, "y": 435, "label": "Costa Rica", "sub": "Projects with Underserved Communities", "url": "/education/projects-with-underserved-communities/" },
+    { "id": "dublin", "x": 455, "y": 289, "label": "Dublin, Ireland", "sub": "From Texas to the Troubles", "url": "/education/from-texas-to-the-troubles/" },
+    { "id": "belfast", "x": 461, "y": 277, "label": "Belfast, Northern Ireland", "sub": "From Texas to the Troubles · Corrymeela · Queen's University Belfast", "url": "/research/northern-ireland/" },
+    { "id": "london", "x": 474, "y": 295, "label": "London, United Kingdom", "sub": "May Term in London", "url": "/education/may-term/" },
+    { "id": "geneva", "x": 492, "y": 317, "label": "Geneva, Switzerland", "sub": "UNHCR practicum · 30-year partnership", "url": "/education/practicum/#unhcr" },
+    { "id": "budapest", "x": 528, "y": 312, "label": "Budapest, Hungary", "sub": "UNHCR practicum", "url": "/education/practicum/#unhcr" },
+    { "id": "tallinn", "x": 544, "y": 256, "label": "Tallinn, Estonia", "sub": "Faculty exchange with Tallinn University", "url": "/research/faculty/" },
+    { "id": "athens", "x": 541, "y": 348, "label": "Greece", "sub": "Projects with Underserved Communities", "url": "/education/projects-with-underserved-communities/" },
+    { "id": "madurai", "x": 694, "y": 435, "label": "Tamil Nadu, India", "sub": "Projects with Underserved Communities", "url": "/education/projects-with-underserved-communities/" },
+    { "id": "cape-town", "x": 527, "y": 563, "label": "Cape Town, South Africa", "sub": "Global practicum", "url": "/education/practicum/#cape-town" },
+    { "id": "wellington", "x": 965, "y": 589, "label": "Wellington, New Zealand", "sub": "Global practicum", "url": "/education/practicum/#wellington" }
+  ]
+}

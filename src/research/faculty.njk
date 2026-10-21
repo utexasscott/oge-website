@@ -1,0 +1,93 @@
+---
+layout: layouts/base.njk
+title: Faculty Research
+description: "UT Social Work faculty whose research and teaching span Chile, Northern Ireland, Puerto Rico, Estonia, India, the United Kingdom and the Texas–Mexico border."
+eyebrow: Research
+lede: "The School's faculty study, teach and build evidence with partners around the world. Meet the people behind our global research."
+breadcrumbs:
+  - { label: "Global Research", url: "/research/" }
+permalink: /research/faculty/
+---
+{% include "components/page-hero.njk" %}
+
+{# ---------- Intro ---------- #}
+<section class="section section--tight" aria-labelledby="intro-title">
+  <div class="container">
+    <div class="max-prose flow">
+      <h2 class="section__title" id="intro-title">Scholarship that crosses borders</h2>
+      <p class="lede">From a clinical master's program in Santiago to a doctoral program in Tallinn, from reconciliation work in Belfast to community evaluation in Tamil Nadu, the School's faculty bring international partnerships into their research and their classrooms.</p>
+      <p>The profiles below are curated by the Office of Global Engagement and will grow as faculty add their global work. Regions and topics are listed for each person so you can find a potential collaborator, mentor or supervisor quickly.</p>
+    </div>
+  </div>
+</section>
+
+{# ---------- Faculty grid ---------- #}
+<section class="section section--sand" aria-labelledby="faculty-title">
+  <div class="container">
+    <div class="section__head">
+      <div>
+        <p class="eyebrow">Faculty</p>
+        <h2 class="section__title" id="faculty-title">Faculty with global research</h2>
+      </div>
+    </div>
+    {% if research.faculty and research.faculty.length %}
+      <div class="people-grid people-grid--2">
+        {% for f in research.faculty %}
+          <article class="person">
+            <span class="person__initials" aria-hidden="true">{{ f.initials }}</span>
+            <div>
+              <h3 class="person__name"><a href="{{ f.url }}">{{ f.name }}</a></h3>
+              <p class="person__title">{{ f.title }}</p>
+              <p class="person__bio">{{ f.summary }}</p>
+              <ul class="tag-list person__focus" aria-label="Regions and topics">
+                {% for r in f.regions %}<li class="tag">{{ r }}</li>{% endfor %}
+                {% for t in f.topics %}<li class="tag tag--initiative">{{ t }}</li>{% endfor %}
+              </ul>
+            </div>
+          </article>
+        {% endfor %}
+      </div>
+    {% else %}
+      <p class="empty-state">Faculty profiles are being added. <a href="/connect/">Contact OGE</a> to be included.</p>
+    {% endif %}
+  </div>
+</section>
+
+{# ---------- Add your work panel ---------- #}
+<section class="section" aria-labelledby="add-title">
+  <div class="container">
+    <div class="split">
+      <div class="flow">
+        <p class="eyebrow">For faculty</p>
+        <h2 class="section__title" id="add-title">Faculty: add your global work</h2>
+        <p>If your research, teaching or service involves international partners, communities or data, OGE wants to feature it. Being listed here helps students find mentors, connects you with colleagues working in the same region and strengthens the case for the School's global priorities.</p>
+        <ol class="steps">
+          <li>
+            <h3>Today: contact OGE</h3>
+            <p>Send a short description of your global work, the regions and partners involved and a link to your directory profile. We will add you to this page.</p>
+          </li>
+          <li>
+            <h3>Soon: tag your entries "global"</h3>
+            <p>The School is planning a "global" tag in its research database. Once it is live, tagging your projects, grants and publications will feed the <a href="/research/">Global Research</a> page automatically, with no separate submission.</p>
+          </li>
+          <li>
+            <h3>Share the story</h3>
+            <p>Have a milestone, a visiting scholar or a student success to share? OGE publishes faculty features in <a href="/stories/">Global Stories</a>.</p>
+          </li>
+        </ol>
+      </div>
+      <div class="split__media">
+        <div class="notice flow">
+          <h3>Get in touch</h3>
+          <p>Global research and initiative inquiries go to the Associate Dean for Global Engagement. For everything else, use the office contact form.</p>
+          <div class="btn-row mt-0">
+            <a class="btn btn--primary" href="/connect/">Contact OGE</a>
+            <a class="btn btn--outline" href="/about/partners/#partner-with-us">Propose a partnership</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% include "components/cta-band.njk" %}

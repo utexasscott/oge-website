@@ -1,0 +1,135 @@
+---
+layout: layouts/base.njk
+title: Global Service
+description: "Serve across borders. Strengthen communities. Through Projects with Underserved Communities, Longhorns co-design water, health and learning projects worldwide."
+eyebrow: Service
+lede: "Serve across borders. Strengthen communities. Global service at the School starts with listening, so that students learn from the communities they serve and leave something that lasts."
+hero:
+  image: /assets/img/hero-oaxaca-wide.jpg
+  alt: "UT Social Work students gathered outside a hillside home in Oaxaca, Mexico, one of the countries where Projects with Underserved Communities teams have worked"
+permalink: /service/
+---
+{% include "components/page-hero.njk" %}
+
+{# ---------- Philosophy ---------- #}
+<section class="section" aria-labelledby="philosophy-title">
+  <div class="container">
+    <div class="split">
+      <div class="flow">
+        <p class="eyebrow">Our approach</p>
+        <h2 class="section__title" id="philosophy-title">Service learning, built on partnership</h2>
+        <p class="lede">Good service begins with a community's own priorities. Our programs pair students with local partners over months, not days, so the work is designed together and the outcomes belong to the community.</p>
+        <p>In Projects with Underserved Communities, undergraduate social work and engineering students spend a full academic year learning project management, design, budgeting, fundraising, cross-cultural collaboration and community engagement before they travel. Social work students bring the skills that make a project stick: listening, community organizing and an understanding of how a water system, a clinic or a library fits into daily life.</p>
+        <p>The School's India team, working with Church's Auxiliary for Social Action in Tamil Nadu, shows what that looks like in practice. Students evaluated a children's library serving 3,000 residents and a housing project for a nomadic community, and left behind community engagement protocols, a service-learning documentary and a book of community stories. As faculty member Farya Phillips put it, students "learn from the communities they serve."</p>
+      </div>
+      <div class="split__media">
+        <ul class="feature-list">
+          <li><strong>Community-defined needs.</strong> Projects address what partners identify: water access, cookstoves, sanitation, accessibility, health clinics, solar power and community learning centers.</li>
+          <li><strong>Interdisciplinary teams.</strong> Social work and engineering students design together with Texas Global and the Cockrell School of Engineering.</li>
+          <li><strong>Relationships that outlast a trip.</strong> Teams return to evaluate earlier projects, as the India team did with a 2015 housing project and a 2021 library.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# ---------- Service programs ---------- #}
+<section class="section section--sand" aria-labelledby="programs-title">
+  <div class="container">
+    <div class="section__head">
+      <div>
+        <p class="eyebrow">Service programs</p>
+        <h2 class="section__title" id="programs-title">Ways we serve</h2>
+      </div>
+    </div>
+    {% if collections.programs_service and collections.programs_service.length %}
+      <div class="card-grid card-grid--3">
+        {% for program in collections.programs_service %}{% include "components/program-card.njk" %}{% endfor %}
+      </div>
+    {% else %}
+      <div class="prose">
+        <ul>
+          <li><a href="/education/projects-with-underserved-communities/">Projects with Underserved Communities</a>: a yearlong service-learning sequence with Texas Global and the Cockrell School of Engineering.</li>
+          <li><a href="/research/ties/">TIES</a>: Texas Initiative Enhancing Rural-Border Solutions.</li>
+        </ul>
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+{# ---------- Impact stats ---------- #}
+<section class="section section--charcoal" aria-labelledby="impact-title">
+  <div class="container">
+    <p class="eyebrow eyebrow--light">Impact</p>
+    <h2 class="section__title" id="impact-title">Projects with Underserved Communities by the numbers</h2>
+    <ul class="stats mt-6">
+      <li class="stat"><span class="stat__value"><span class="visually-hidden">nearly </span><span aria-hidden="true">~</span>300</span><span class="stat__label">Longhorns who have served through Projects with Underserved Communities since 2010</span></li>
+      <li class="stat"><span class="stat__value">4</span><span class="stat__label">Continents where teams have worked, across 12 countries</span></li>
+      <li class="stat"><span class="stat__value">18,300<span aria-hidden="true">+</span></span><span class="stat__label">People served by community projects</span></li>
+      <li class="stat"><span class="stat__value">2010</span><span class="stat__label">Year the program launched with Texas Global and the Cockrell School of Engineering</span></li>
+    </ul>
+  </div>
+</section>
+
+{# ---------- Ways to serve ---------- #}
+<section class="section" aria-labelledby="ways-title">
+  <div class="container">
+    <div class="section__head">
+      <div>
+        <p class="eyebrow">Get involved</p>
+        <h2 class="section__title" id="ways-title">Ways to serve</h2>
+        <p class="section__intro">There is a role for students, faculty, alumni and partners.</p>
+      </div>
+    </div>
+    <div class="card-grid card-grid--3">
+      <div class="notice flow">
+        <p class="eyebrow">Students</p>
+        <h3>Join Projects with Underserved Communities</h3>
+        <p>Undergraduate social work and engineering students apply through Texas Global for the yearlong sequence (ES 277K, ES 277L and ES 177L), then travel the following summer. Applications are rolling with a spring priority deadline; see the current application.</p>
+        <a class="btn btn--primary btn--sm" href="/education/projects-with-underserved-communities/">Learn about PUC</a>
+      </div>
+      <div class="notice flow">
+        <p class="eyebrow">Faculty</p>
+        <h3>Propose a community-engaged initiative</h3>
+        <p>Have a partner community and an idea for service learning, evaluation or capacity building? OGE helps faculty shape proposals, connect with Texas Global and find student teams.</p>
+        <a class="btn btn--outline btn--sm" href="/connect/">Contact OGE</a>
+      </div>
+      <div class="notice flow">
+        <p class="eyebrow">Alumni &amp; partners</p>
+        <h3>Host or mentor</h3>
+        <p>Organizations can host a student team or a practicum placement; alumni can mentor students preparing to travel or share their own experience at a showcase.</p>
+        <a class="btn btn--outline btn--sm" href="/about/partners/#partner-with-us">Partner with us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# ---------- Stories ---------- #}
+{% set serviceStories = collections.publishedStories | where("initiatives", "Projects with Underserved Communities") | limit(3) %}
+<section class="section section--sand" aria-labelledby="stories-title">
+  <div class="container">
+    <div class="section__head">
+      <div>
+        <p class="eyebrow">Global Stories</p>
+        <h2 class="section__title" id="stories-title">Service in the field</h2>
+      </div>
+      <a class="section__more" href="/stories/">All stories</a>
+    </div>
+    {% if serviceStories and serviceStories.length %}
+      <div class="card-grid card-grid--3">
+        {% for story in serviceStories %}{% include "components/story-card.njk" %}{% endfor %}
+      </div>
+    {% else %}
+      <p class="empty-state">Stories from Projects with Underserved Communities teams are on their way. Browse the <a href="/stories/">Global Stories archive</a> in the meantime.</p>
+    {% endif %}
+  </div>
+</section>
+
+{% set cta = {
+  theme: "green",
+  heading: "Serve across borders",
+  text: "Join a Projects with Underserved Communities team, or help send the next one. Investment in global education creates ripple effects, impacting communities worldwide.",
+  primary: { label: "Apply to PUC", url: "https://global.utexas.edu/abroad/programs/service-learning/projects-underserved-communities" },
+  secondary: { label: "Support service learning", url: "/give/" }
+} %}
+{% include "components/cta-band.njk" %}

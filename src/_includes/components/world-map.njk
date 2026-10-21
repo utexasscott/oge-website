@@ -1,0 +1,21 @@
+{# Interactive world map with partner pins. Uses /assets/img/world-map.png as the base layer. #}
+<div class="world-map" data-world-map>
+  <div class="world-map__canvas" style="aspect-ratio: {{ map.viewBox[0] }} / {{ map.viewBox[1] }}">
+    <img class="world-map__base" src="/assets/img/world-map.png" alt="" width="{{ map.viewBox[0] }}" height="{{ map.viewBox[1] }}" loading="lazy">
+    <ul class="world-map__pins" aria-label="Where we work">
+      {% for pin in map.pins %}
+        <li class="world-map__pin {% if pin.home %}world-map__pin--home{% endif %}" style="left: {{ (pin.x / map.viewBox[0] * 100) | round(2) }}%; top: {{ (pin.y / map.viewBox[1] * 100) | round(2) }}%;">
+          <a href="{{ pin.url }}" class="world-map__dot" aria-describedby="pin-{{ pin.id }}">
+            <span class="visually-hidden">{{ pin.label }}</span>
+          </a>
+          <span class="world-map__tip" role="tooltip" id="pin-{{ pin.id }}">
+            <strong>{{ pin.label }}</strong><br>{{ pin.sub }}
+          </span>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+  <ol class="world-map__legend">
+    {% for pin in map.pins %}<li><a href="{{ pin.url }}">{{ pin.label }}</a></li>{% endfor %}
+  </ol>
+</div>

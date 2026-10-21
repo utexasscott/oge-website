@@ -1,0 +1,87 @@
+---
+layout: layouts/base.njk
+title: Leadership
+description: "Meet the leadership of the Office of Global Engagement at UT Austin's School of Social Work: Associate Dean Noël Busch-Armendariz and Assistant Dean Tanya Voss."
+eyebrow: About OGE
+lede: "The Office of Global Engagement is led by an associate dean and an assistant dean who together oversee the School's global education, research and service."
+permalink: /about/leadership/
+breadcrumbs:
+  - label: About
+    url: /about/
+hero:
+  image: /assets/img/hero-oaxaca-wide.jpg
+  alt: "UT Social Work students gathered together during a global practicum in Oaxaca, Mexico"
+  size: short
+---
+{% include "components/page-hero.njk" %}
+
+{# ---------- Leadership profiles ---------- #}
+<section class="section" aria-labelledby="leaders-title">
+  <div class="container">
+    <div class="section__head">
+      <div>
+        <p class="eyebrow">Office leadership</p>
+        <h2 class="section__title" id="leaders-title">Leading the School's global engagement</h2>
+      </div>
+      <a class="section__more" href="/about/team/">See the full team</a>
+    </div>
+    <div class="people-grid people-grid--2">
+      {% for p in team.leadership %}
+        <article class="person person--lead person--stack" id="{{ p.shortName | slug }}">
+          {% if p.photo %}
+            <img class="person__photo" src="{{ p.photo }}" alt="Portrait of {{ p.shortName }}" loading="lazy">
+          {% else %}
+            <span class="person__initials" aria-hidden="true">{{ p.initials }}</span>
+          {% endif %}
+          <div>
+            <h3 class="person__name"><a href="{{ p.url }}">{{ p.name }}</a></h3>
+            <p class="person__title">{{ p.title }}</p>
+            {% if p.secondaryTitle %}<p class="person__subtitle">{{ p.secondaryTitle }}</p>{% endif %}
+            <p class="person__bio">{{ p.bio }}</p>
+            {% if p.focus and p.focus.length %}
+              <ul class="tag-list person__focus" aria-label="Areas of focus">
+                {% for f in p.focus %}<li class="tag">{{ f }}</li>{% endfor %}
+              </ul>
+            {% endif %}
+            {% if p.email %}<p class="person__contact"><a href="mailto:{{ p.email }}">{{ p.email }}</a></p>{% endif %}
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{# ---------- Dean's quote ---------- #}
+<section class="section section--charcoal" aria-labelledby="dean-title">
+  <div class="container split split--wide-media">
+    <div>
+      <p class="eyebrow eyebrow--light">From the Dean</p>
+      <h2 id="dean-title">A signature of the School for more than 20 years</h2>
+      <p>Global engagement is one of the School's strategic priorities for 2024–2026. The office builds on a long record of international social work education at the School, from the first UNHCR placements in 1993 to faculty-led internships in 20 countries.</p>
+    </div>
+    <figure>
+      <blockquote class="pullquote">Global engagement has been a part of our signature education landscape for more than 20 years.</blockquote>
+      <figcaption class="pullquote-cite">Allan Cole, Dean, Steve Hicks School of Social Work</figcaption>
+    </figure>
+  </div>
+</section>
+
+{# ---------- Founding leadership ---------- #}
+<section class="section" aria-labelledby="founding-title">
+  <div class="container">
+    <div class="max-prose flow">
+      <p class="eyebrow">Founding leadership</p>
+      <h2 class="mt-0" id="founding-title">Establishing the office, 2023–2024</h2>
+      <p>The Office of Global Engagement was created in 2023. <a href="https://socialwork.utexas.edu/directory/ruben-parra-cardona/">Dr. Rubén Parra-Cardona</a>, Professor, served as the School's founding Associate Dean for Global Engagement from 2023 to 2024, leading initiatives that continue today, including the clinical master's collaboration and parenting research in Chile and Cortando la Brecha, a capacity-building program for Puerto Rican scholars. Tanya Voss joined the office as Assistant Dean for Global Engagement in August 2023, and Dr. Noël Busch-Armendariz was named Associate Dean in June 2024.</p>
+      <figure class="notice">
+        <blockquote class="mt-0">
+          <p>Global engagement represents one of the most strategic areas for our School.</p>
+        </blockquote>
+        <figcaption class="pullquote-cite">Rubén Parra-Cardona, Ph.D., founding Associate Dean for Global Engagement</figcaption>
+      </figure>
+      <p class="small muted">Questions about global research or initiatives? Contact Associate Dean Noël Busch-Armendariz at <a href="mailto:nbusch@austin.utexas.edu">nbusch@austin.utexas.edu</a> or <a href="/connect/">reach the office</a>.</p>
+    </div>
+  </div>
+</section>
+
+{% include "components/cta-band.njk" %}

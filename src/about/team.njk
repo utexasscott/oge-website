@@ -1,0 +1,146 @@
+---
+layout: layouts/base.njk
+title: Our Team
+description: "The people behind the Office of Global Engagement: leadership, staff and the faculty liaisons who lead global practicums, May Term courses and partnerships."
+eyebrow: About OGE
+lede: "Office leadership, staff and the faculty liaisons who lead each global program work together to support students, faculty and partners around the world."
+permalink: /about/team/
+breadcrumbs:
+  - label: About
+    url: /about/
+---
+{% include "components/page-hero.njk" %}
+
+{# ---------- Leadership ---------- #}
+<section class="section" aria-labelledby="leadership-title">
+  <div class="container">
+    <div class="section__head">
+      <div>
+        <p class="eyebrow">Leadership</p>
+        <h2 class="section__title" id="leadership-title">Office leadership</h2>
+      </div>
+      <a class="section__more" href="/about/leadership/">Full leadership profiles</a>
+    </div>
+    <div class="people-grid">
+      {% for p in team.leadership %}
+        <article class="person">
+          {% if p.photo %}
+            <img class="person__photo" src="{{ p.photo }}" alt="" loading="lazy">
+          {% else %}
+            <span class="person__initials" aria-hidden="true">{{ p.initials }}</span>
+          {% endif %}
+          <div>
+            <h3 class="person__name"><a href="{{ p.url }}">{{ p.name }}</a></h3>
+            <p class="person__title">{{ p.title }}</p>
+            {% if p.secondaryTitle %}<p class="person__subtitle">{{ p.secondaryTitle }}</p>{% endif %}
+            {% if p.email %}<p class="person__contact"><a href="mailto:{{ p.email }}">{{ p.email }}</a></p>{% endif %}
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{# ---------- Staff ---------- #}
+<section class="section section--sand" aria-labelledby="staff-title">
+  <div class="container">
+    <div class="section__head">
+      <div>
+        <p class="eyebrow">Staff</p>
+        <h2 class="section__title" id="staff-title">Office staff</h2>
+        <p class="section__intro">Staff coordinate research, partnership agreements, communications and events for the office.</p>
+      </div>
+    </div>
+    <div class="people-grid">
+      {% for p in team.staff %}
+        <article class="person">
+          {% if p.photo %}
+            <img class="person__photo" src="{{ p.photo }}" alt="" loading="lazy">
+          {% else %}
+            <span class="person__initials" aria-hidden="true">{{ p.initials }}</span>
+          {% endif %}
+          <div>
+            <h3 class="person__name"><a href="{{ p.url }}">{{ p.name }}</a></h3>
+            <p class="person__title">{{ p.title }}</p>
+            {% if p.secondaryTitle %}<p class="person__subtitle">{{ p.secondaryTitle }}</p>{% endif %}
+            {% if p.bio %}<p class="person__bio">{{ p.bio }}</p>{% endif %}
+            {% if p.focus and p.focus.length %}
+              <ul class="tag-list person__focus" aria-label="Areas of focus">
+                {% for f in p.focus %}<li class="tag">{{ f }}</li>{% endfor %}
+              </ul>
+            {% endif %}
+            {% if p.email %}<p class="person__contact"><a href="mailto:{{ p.email }}">{{ p.email }}</a></p>{% endif %}
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{# ---------- Faculty liaisons ---------- #}
+<section class="section" aria-labelledby="liaisons-title">
+  <div class="container">
+    <div class="section__head">
+      <div>
+        <p class="eyebrow">Faculty</p>
+        <h2 class="section__title" id="liaisons-title">Faculty liaisons &amp; program leads</h2>
+        <p class="section__intro">Each global practicum site, May Term course and partnership is led by a faculty member. Have questions about a specific agency or program? Reach out to the faculty liaison associated with that program.</p>
+      </div>
+      <a class="section__more" href="/education/practicum/">Global practicum sites</a>
+    </div>
+    <div class="people-grid people-grid--3">
+      {% for p in team.facultyLiaisons %}
+        <article class="person">
+          {% if p.photo %}
+            <img class="person__photo" src="{{ p.photo }}" alt="" loading="lazy">
+          {% else %}
+            <span class="person__initials" aria-hidden="true">{{ p.initials }}</span>
+          {% endif %}
+          <div>
+            <h3 class="person__name"><a href="{{ p.url }}">{{ p.name }}</a></h3>
+            <p class="person__title">{{ p.title }}</p>
+            {% if p.programs and p.programs.length %}
+              <ul class="tag-list person__focus" aria-label="Programs">
+                {% for prog in p.programs %}<li class="tag tag--initiative">{{ prog }}</li>{% endfor %}
+              </ul>
+            {% endif %}
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{# ---------- Work with us ---------- #}
+<section class="section section--sand" aria-labelledby="work-title">
+  <div class="container split">
+    <div class="flow">
+      <p class="eyebrow">Work with us</p>
+      <h2 class="mt-0" id="work-title">Faculty and staff: propose a global initiative</h2>
+      <p>OGE leads, supports and coordinates the School's global engagement initiatives. If you are a faculty or staff member with an idea for an international research collaboration, a faculty-led course, a visiting scholar exchange or a new practicum site, the office can help you scope the project, identify partners and coordinate with Texas Global.</p>
+      <p>Global research and initiative inquiries go to Associate Dean Noël Busch-Armendariz at <a href="mailto:nbusch@austin.utexas.edu">nbusch@austin.utexas.edu</a>. For practicum placements and student exchange, contact Assistant Dean Tanya Voss.</p>
+    </div>
+    <div class="flow">
+      <ol class="steps">
+        <li>
+          <h3>Share your idea</h3>
+          <p>Tell us about the partner, the place and the students or faculty you hope to involve.</p>
+        </li>
+        <li>
+          <h3>Plan together</h3>
+          <p>We help align the initiative with the School's three pillars of education, research and service and connect you with the right campus offices.</p>
+        </li>
+        <li>
+          <h3>Launch and share</h3>
+          <p>Once underway, we feature your work in Global Stories and events so the whole School community can learn from it.</p>
+        </li>
+      </ol>
+      <div class="btn-row mt-0">
+        <a class="btn btn--primary" href="/connect/">Contact the office</a>
+        <a class="btn btn--outline" href="/connect/listserv/">Join the listserv</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% include "components/cta-band.njk" %}

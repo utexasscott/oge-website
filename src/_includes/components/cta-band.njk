@@ -1,0 +1,32 @@
+{# Closing call-to-action band. Defaults to the segmented student/donor CTA; pages can override via `cta` front matter. #}
+{% if cta %}
+<section class="cta-band cta-band--{{ cta.theme or 'orange' }}" aria-labelledby="cta-heading">
+  <div class="container cta-band__inner">
+    <div>
+      <h2 class="cta-band__heading" id="cta-heading">{{ cta.heading }}</h2>
+      {% if cta.text %}<p class="cta-band__text">{{ cta.text }}</p>{% endif %}
+    </div>
+    <div class="cta-band__actions">
+      {% if cta.primary %}<a class="btn btn--light" href="{{ cta.primary.url }}">{{ cta.primary.label }}</a>{% endif %}
+      {% if cta.secondary %}<a class="btn btn--ghost-light" href="{{ cta.secondary.url }}">{{ cta.secondary.label }}</a>{% endif %}
+    </div>
+  </div>
+</section>
+{% else %}
+<section class="audience-cta" aria-label="Get involved">
+  <div class="container audience-cta__grid">
+    <div class="audience-card audience-card--students">
+      <p class="eyebrow eyebrow--light">For Students</p>
+      <h2 class="audience-card__heading">Leave to Learn. Return to Lead.</h2>
+      <p>Global experience enriches your social work practice and expands your career opportunities. Explore practicums, courses and signature programs on four continents.</p>
+      <a class="btn btn--light" href="/education/student-opportunities/">Explore student opportunities</a>
+    </div>
+    <div class="audience-card audience-card--donors">
+      <p class="eyebrow eyebrow--light">For Donors &amp; Partners</p>
+      <h2 class="audience-card__heading">Invest in a global ripple effect.</h2>
+      <p>Your support sends students abroad, sustains partnerships and advances research on the world's most pressing social challenges.</p>
+      <a class="btn btn--light" href="/give/">Support global engagement</a>
+    </div>
+  </div>
+</section>
+{% endif %}

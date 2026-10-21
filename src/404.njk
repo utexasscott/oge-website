@@ -1,0 +1,61 @@
+---
+layout: layouts/base.njk
+title: Page not found
+eyebrow: Error 404
+lede: We couldn't find that page. It may have moved while we reorganize the Office of Global Engagement site, or the link may be out of date.
+description: "The page you requested could not be found on the Office of Global Engagement website."
+permalink: 404.html
+eleventyExcludeFromCollections: true
+---
+{% include "components/page-hero.njk" %}
+
+<div class="container layout-prose">
+  <div class="flow max-prose">
+    <h2>Try one of these instead</h2>
+    <div class="btn-row mt-0">
+      <a class="btn btn--primary" href="/">Go to the homepage</a>
+      <a class="btn btn--outline" href="/connect/">Contact the office</a>
+    </div>
+  </div>
+  <div class="resource-grid resource-grid--3 mt-6">
+    <a class="resource" href="/about/">
+      <h3 class="resource__title">About OGE</h3>
+      <p class="resource__text">Mission, vision, leadership, team and the partners we work with around the world.</p>
+    </a>
+    <a class="resource" href="/education/">
+      <h3 class="resource__title">Education abroad</h3>
+      <p class="resource__text">Global Practicum, From Texas to the Troubles, Projects with Underserved Communities, May Term courses and the certificate.</p>
+    </a>
+    <a class="resource" href="/research/">
+      <h3 class="resource__title">Global research</h3>
+      <p class="resource__text">Faculty partnerships in Chile, Northern Ireland, Puerto Rico, Estonia and along the Texas–Mexico border.</p>
+    </a>
+    <a class="resource" href="/service/">
+      <h3 class="resource__title">Global service</h3>
+      <p class="resource__text">Service learning with communities on four continents.</p>
+    </a>
+    <a class="resource" href="/stories/">
+      <h3 class="resource__title">Global Stories</h3>
+      <p class="resource__text">Student experiences, faculty research and partner spotlights from the field.</p>
+    </a>
+    <a class="resource" href="/events/">
+      <h3 class="resource__title">Events</h3>
+      <p class="resource__text">Information sessions, deadlines, lectures and showcases.</p>
+    </a>
+    <a class="resource" href="/education/student-opportunities/">
+      <h3 class="resource__title">Student opportunities</h3>
+      <p class="resource__text">Everything a student can apply for, in one place.</p>
+    </a>
+    <a class="resource" href="/resources/international-students/">
+      <h3 class="resource__title">International student resources</h3>
+      <p class="resource__text">Support, career tools and community for international students at the School.</p>
+    </a>
+    <a class="resource" href="/give/">
+      <h3 class="resource__title">Support global engagement</h3>
+      <p class="resource__text">Ways to give and the difference your gift makes.</p>
+    </a>
+  </div>
+  <p class="small muted mt-6">Looking for the main School website? Visit <a href="{{ site.parentUrl }}">socialwork.utexas.edu</a>.</p>
+</div>
+
+{% include "components/cta-band.njk" %}

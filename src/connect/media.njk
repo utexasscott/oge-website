@@ -1,0 +1,122 @@
+---
+layout: layouts/base.njk
+title: Media Requests
+eyebrow: For journalists
+lede: Reporters and producers can reach the Office of Global Engagement's faculty experts on global social work education, peace and reconciliation, clinical training in Chile, refugee services and service learning.
+description: "Media requests for the Office of Global Engagement: experts on global social work education, Northern Ireland reconciliation, Chile, UNHCR and service learning."
+permalink: /connect/media/
+breadcrumbs:
+  - { label: "Connect", url: "/connect/" }
+---
+{% include "components/page-hero.njk" %}
+
+<div class="container layout-sidebar">
+  <div>
+    <div class="flow mb-6">
+      <h2 id="topics">What OGE can speak to</h2>
+      <ul class="feature-list feature-list--2">
+        <li><strong>Global social work education.</strong> How immersive practicums abroad, in Santiago, Oaxaca, Wellington, Cape Town, Geneva and Budapest, shape social work practice at home.</li>
+        <li><strong>Northern Ireland and reconciliation.</strong> Constructive dialogue and leadership in divided societies, lessons from the Good Friday Agreement and the From Texas to the Troubles program with Corrymeela.</li>
+        <li><strong>Clinical training in Chile.</strong> The country's first clinical master's in social work, built with Pontificia Universidad Católica de Chile, and parenting research with Fundación San Carlos de Maipo.</li>
+        <li><strong>Refugee services with UNHCR.</strong> A partnership since 1993 placing students in Geneva and Budapest to support program planning, monitoring and evaluation for refugee efforts worldwide.</li>
+        <li><strong>Service learning.</strong> Projects with Underserved Communities, where engineering and social work undergraduates co-design water, sanitation, health and learning projects with communities on four continents.</li>
+        <li><strong>International student and scholar life</strong> at the School, including faculty exchange with partners such as Tallinn University in Estonia.</li>
+      </ul>
+    </div>
+
+    <section class="mb-6" aria-labelledby="experts-title">
+      <h2 id="experts-title">Faculty experts</h2>
+      <div class="people-grid mt-6">
+        {% for p in team.leadership %}
+          <article class="person">
+            {% if p.photo %}<img class="person__photo" src="{{ p.photo }}" alt="" loading="lazy">{% else %}<span class="person__initials" aria-hidden="true">{{ p.initials }}</span>{% endif %}
+            <div>
+              <h3 class="person__name">{% if p.url %}<a href="{{ p.url }}">{{ p.name }}</a>{% else %}{{ p.name }}{% endif %}</h3>
+              <p class="person__title">{{ p.title }}</p>
+              {% if p.secondaryTitle %}<p class="person__subtitle">{{ p.secondaryTitle }}</p>{% endif %}
+              {% if p.focus and p.focus.length %}
+                <ul class="tag-list person__focus" aria-label="Areas of expertise">
+                  {% for f in p.focus %}<li class="tag">{{ f }}</li>{% endfor %}
+                </ul>
+              {% endif %}
+              {% if p.email %}<p class="person__contact"><a href="mailto:{{ p.email }}">{{ p.email }}</a></p>{% endif %}
+            </div>
+          </article>
+        {% endfor %}
+      </div>
+      <p class="small muted mt-6">Faculty liaisons for individual practicum sites and the faculty leading research in Chile, Puerto Rico and Estonia are listed on the <a href="/about/team/">team page</a> and <a href="/research/faculty/">faculty research page</a>. We can connect you with current students and alumni on request.</p>
+    </section>
+
+    <div class="flow mb-6">
+      <h2 id="request">Make a request</h2>
+      <p>We aim to acknowledge media requests within one business day and to connect you with the right expert within two. Please include your deadline so we can prioritize. For urgent, same-day requests, call the office at <a href="{{ site.phone | telHref }}">{{ site.phone }}</a>.</p>
+      <!-- VERIFY: the one- and two-business-day response targets are placeholders; confirm with OGE and School communications. -->
+    </div>
+
+    <form class="form" data-form data-form-success="A member of the School's communications team will follow up." novalidate aria-labelledby="request">
+      <div class="form__row form__row--2">
+        <div class="field">
+          <label for="m-name">Name <span aria-hidden="true">*</span></label>
+          <input id="m-name" name="name" type="text" required autocomplete="name">
+        </div>
+        <div class="field">
+          <label for="m-outlet">Outlet <span aria-hidden="true">*</span></label>
+          <input id="m-outlet" name="outlet" type="text" required autocomplete="organization">
+        </div>
+      </div>
+      <div class="form__row form__row--2">
+        <div class="field">
+          <label for="m-email">Email <span aria-hidden="true">*</span></label>
+          <input id="m-email" name="email" type="email" required autocomplete="email" inputmode="email">
+        </div>
+        <div class="field">
+          <label for="m-deadline">Deadline</label>
+          <input id="m-deadline" name="deadline" type="date">
+          <p class="hint">Leave blank if there is no firm deadline.</p>
+        </div>
+      </div>
+      <div class="field">
+        <label for="m-request">Request <span aria-hidden="true">*</span></label>
+        <textarea id="m-request" name="request" required rows="6"></textarea>
+        <p class="hint">Topic, format (interview, written comment, background) and whether you need visuals.</p>
+      </div>
+      <div class="visually-hidden" aria-hidden="true">
+        <label for="m-website">Leave this field empty</label>
+        <input id="m-website" name="website" type="text" tabindex="-1" autocomplete="off">
+      </div>
+      <div class="form__status" data-form-status hidden tabindex="-1"></div>
+      <div>
+        <button class="btn btn--primary" type="submit">Send request</button>
+      </div>
+      <p class="form__note">Required fields are marked with an asterisk. In production this form is powered by the School's WordPress form plugin and routes to the School's communications office and OGE; this local build only simulates a submission.</p>
+    </form>
+  </div>
+
+  <aside class="rail" aria-label="Media resources">
+    <div class="rail-block">
+      <h2 class="rail-heading">School communications</h2>
+      <p class="small">Media inquiries about the Steve Hicks School of Social Work as a whole go through the School's communications office.</p>
+      <a class="btn btn--outline btn--sm" href="https://socialwork.utexas.edu/about/contact-us/">Contact the School</a>
+      <!-- VERIFY: School communications contact URL. -->
+    </div>
+    <div class="rail-block">
+      <h2 class="rail-heading">Brand &amp; press materials</h2>
+      <p class="small">Logos, boilerplate text and approved photography for the Office of Global Engagement follow the University's brand guidelines. Photos of students abroad are shared with their permission; ask us for high-resolution images and captions when you make a request. <!-- VERIFY: link to a press kit / brand assets folder once OGE provides one. --></p>
+    </div>
+    <div class="rail-block">
+      <h2 class="rail-heading">Boilerplate</h2>
+      <p class="small">The Office of Global Engagement (OGE) strengthens the Steve Hicks School of Social Work's mission by leading, supporting, and coordinating its global engagement initiatives. OGE fosters strategic partnerships both on campus and internationally, cultivates a thriving community of international students and scholars, and supports and creates opportunities for students, faculty, staff, alumni, professionals, and lifelong learners to connect with peers and institutions worldwide.</p>
+    </div>
+    <div class="rail-block">
+      <h2 class="rail-heading">Related</h2>
+      <ul class="rail-links">
+        <li><a href="/stories/">Global Stories</a></li>
+        <li><a href="/events/">Events</a></li>
+        <li><a href="/about/leadership/">Leadership</a></li>
+        <li><a href="/connect/">General contact</a></li>
+      </ul>
+    </div>
+  </aside>
+</div>
+
+{% include "components/cta-band.njk" %}
